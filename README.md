@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/452def64-a8d2-484f-96b3-ddc396630ec8/deploy-status)](https://app.netlify.com/sites/pitch-eka/deploys)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
