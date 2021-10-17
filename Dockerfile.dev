@@ -1,0 +1,24 @@
+# escape=`
+
+FROM node:14-alpine as dep
+
+ENV NODE_ENV=development
+
+WORKDIR /app
+
+COPY package*.json .
+
+RUN npm install
+
+FROM node:14-alpine as serve
+
+WORKDIR /app
+
+COPY --from=dep /app/node_modules /node_modules
+
+COPY . .
+
+EXPOSE 3000
+
+# webapck server
+CMD ["npm", "start"]
