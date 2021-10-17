@@ -16,7 +16,7 @@ COPY --from=deps /app/node_modules /node_modules
 
 COPY . .
 
-RUN npm run prod
+RUN npm run build
 
 FROM nginx:1.21.0-alpine as production
 
