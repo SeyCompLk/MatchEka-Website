@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { TextField } from './components/TextField';
 import Home from './pages/Home';
 import {NavBar} from './components/Navbar';
+import PRImg from './logo.png';
 
 function App() {
 
   return (
     <div className="App">
-      <NavBar/>
+      <NavBar imgSrc={PRImg}/>
       <Home/>
-      <TextField name='fef' age={12}/>
     </div>
   );
 }
