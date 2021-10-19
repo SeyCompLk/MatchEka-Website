@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TextField } from './components/TextField';
 import Home from './pages/Home';
 import {NavBar} from './components/Navbar';
-import PRImg from './logo.png';
+import PRImg from '../src/assets/icons/me-logo.png';
 
 function App() {
 
