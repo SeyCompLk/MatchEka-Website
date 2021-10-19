@@ -7,7 +7,10 @@ interface Props{
 export const NavBar:React.FC<Props> = ({imgSrc}) => {
   return (
     <nav className="w-full justify-between inline-flex p-5 shadow-md rounded-xl items-center bg-white">
-      <h2 className="flex text-4xl font-bold ml-4">Match Eka</h2>
+      <div className="inline-flex">
+        <img className="rounded-2xl w-16" src={imgSrc} alt="Logo"/>
+        <h2 className="flex text-4xl font-bold ml-4 items-center">Match Eka</h2>
+      </div>
       <div className="flex">
         <ul className="inline-flex font-semibold items-center">
           <li className="navbar-link">Home</li>
