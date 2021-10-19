@@ -1,22 +1,40 @@
 import React from "react";
 import UpcomingMatches from "../components/Home/UpcomingMatchList";
 import AddSlide,{Card} from "../components/Home/AddSlide";
+import LiveMatchList from "../components/Home/LiveMatchList";
 
 const Home:React.FC = () => {
     return (
         <div>
-            <div className="grid grid-cols-3 m-5">
-                <div className="col-start-1 w-full">
+            <div className="hidden 2xl:grid 2xl:grid-cols-3 2xl:m-5">
+                <div className="2xl:col-start-1 2xl:w-full">
                     <UpcomingMatches/>
                 </div>
-                <div className="col-start-2 col-span-2 w-full mx-5">
-                    <div className="w-full row-start-1 h-3/6">
-                        <div className="h-full pb-5 pl-5 pr-5">
+                <div className="2xl:col-start-2 2xl:col-span-2 2xl:w-full 2xl:mx-5">
+                    <div className="row-start-2 col-start-2 2xl:w-full 2xl:row-start-1 2xl:h-3/6">
+                        <div className="2xl:h-full 2xl:pb-5 2xl:pl-5 2xl:pr-5">
                             <AddSlide/>
                         </div>
                     </div>
-                    <div className="w-full row-start-2 h-3/6">
-                        <div className="h-full pt-5 pl-5 pr-5">
+                    <div className="2xl:w-full 2xl:row-start-2 2xl:h-3/6">
+                        <div className="2xl:h-full 2xl:pt-5 2xl:pl-5 2xl:pr-5">
+                            <LiveMatchList/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="lg:hidden 2xl:grid-cols-3 2xl:m-5">
+                <div className="2xl:col-start-1 2xl:w-full">
+                    <UpcomingMatches/>
+                </div>
+                <div className="2xl:col-start-2 2xl:col-span-2 2xl:w-full 2xl:mx-5">
+                    <div className="row-start-2 col-start-2 2xl:w-full 2xl:row-start-1 2xl:h-3/6">
+                        <div className="2xl:h-full 2xl:pb-5 2xl:pl-5 2xl:pr-5">
+                            <AddSlide/>
+                        </div>
+                    </div>
+                    <div className="2xl:w-full 2xl:row-start-2 2xl:h-3/6">
+                        <div className="2xl:h-full 2xl:pt-5 2xl:pl-5 2xl:pr-5">
                             <AddSlide/>
                         </div>
                     </div>

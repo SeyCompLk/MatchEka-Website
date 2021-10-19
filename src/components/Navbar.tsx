@@ -4,7 +4,7 @@ interface Props{
   imgSrc: string;
 };
 
-export const NavBar:React.FC<Props> = ({imgSrc}) => {
+const NavBar:React.FC<Props> = ({imgSrc}) => {
   return (
     <nav className="w-full justify-between inline-flex p-5 shadow-md rounded-xl items-center bg-white">
       <div className="inline-flex">
@@ -24,17 +24,6 @@ export const NavBar:React.FC<Props> = ({imgSrc}) => {
     </nav>
   );
 };
-/*
-<nav className="bg-white shadow-md p-4 rounded-md my-2 inline-flex w-full items-end">
-      <h2 className="flex md:flex">Match Eka</h2>
-      <div className="">
-        <ul className="">
-          <li>Home</li>
-          <li>Rewards</li>
-          <li>Leaderboard</li>
-          <li>Previous Matches</li>
-          <li>About</li>
-        </ul>
-      </div>
-    </nav>
-*/
+
+export default NavBar;
+

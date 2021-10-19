@@ -1,5 +1,4 @@
 import React from "react";
-import LGO from "./logo.png";
 import SAF from './SA.jpg';
 import SLF from './SL.jpg';
 

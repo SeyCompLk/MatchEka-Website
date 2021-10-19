@@ -113,12 +113,6 @@ export const Card = () => {
 const AddSlide: React.FC = () => {
   return (
     <div className="h-full w-full rounded-2xl shadow-xl bg-blue-600">
-      <h1>fehfh fef uh fh uhf ueufh uehfiuehfeuh</h1>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </div>
   );
 };
