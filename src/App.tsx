@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Home from './pages/Home';
 import NavBar from './components/Navbar';
 import PRImg from '../src/assets/icons/me-logo.png';
