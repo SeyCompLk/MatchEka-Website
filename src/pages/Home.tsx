@@ -7,29 +7,35 @@ const Home:React.FC = () => {
 
     return (
         <div>
-            <div className="hidden 2xl:grid 2xl:grid-cols-3 2xl:m-5">
-                <div className="2xl:col-start-1 2xl:w-full">
+            <div className="hidden lg:grid lg:grid-cols-3 lg:m-5">
+                <div className="lg:col-start-1 lg:w-full">
                     <UpcomingMatches/>
                 </div>
-                <div className="2xl:col-start-2 2xl:col-span-2 2xl:w-full 2xl:mx-5">
-                    <div className="row-start-2 col-start-2 2xl:w-full 2xl:row-start-1 2xl:h-3/6">
-                        <div className="2xl:h-full 2xl:pb-5 2xl:pl-5 2xl:pr-5">
+                <div className="lg:col-start-2 lg:col-span-2 lg:w-full lg:mx-5">
+                    <div className="row-start-2 col-start-2 lg:w-full lg:row-start-1 lg:h-3/6">
+                        <div className="lg:h-full lg:pb-5 lg:pl-5 lg:pr-5">
                             <AddSlide/>
                         </div>
                     </div>
-                    <div className="2xl:w-full 2xl:row-start-2 2xl:h-3/6">
-                        <div className="2xl:h-full 2xl:pt-5 2xl:pl-5 2xl:pr-5">
+                    <div className="lg:w-full lg:row-start-2 lg:h-3/6">
+                        <div className="lg:h-full lg:pt-5 lg:pl-5 lg:pr-5">
                             <LiveMatchList/>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="lg:hidden grid grid-rows-2">
-                <div className="row-start-1">
+            <div className="lg:hidden grid grid-flow-row auto-rows-max h-screen w-full mt-5">
+                <div className="w-full row-start-1 row-span-2 px-2 py-3">
                     <AddSlide/>
                 </div>
-                <div className="row-start-2">
-
+                <br/>
+                <div className="w-full row-start-3 flex justify-center items-end">
+                    <div className="bg-blue-600 rounded-3xl w-6/12 grid grid-cols-2 overflow-hidden h-3/6">
+                        <button className="flex justify-center items-center object-fill font-semibold border-r-2 border-black w-full h-full bg-white">Live</button>
+                        <button className="flex justify-center items-center object-fill font-semibold  border-black w-full h-full bg-blue-500">Upcoming</button>
+                    </div>
+                </div>
+                <div className="w-full row-start-4 row-span-3 px-2 py-3">
                     <AddSlide/>
                 </div>
             </div>
