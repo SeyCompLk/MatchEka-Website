@@ -5,6 +5,6 @@
 
 @layer base {
   .navbar-link {
-    @apply px-5 hover:text-green-500 text-lg;
+    @apply px-5 hover:text-blue-600 text-lg;
   }
 }

@@ -8,6 +8,7 @@ function App() {
   useEffect(()=>{
     document.title = "Match Eka";
   },[]);
+  
   return (
     <div className="App">
       <NavBar imgSrc={PRImg}/>

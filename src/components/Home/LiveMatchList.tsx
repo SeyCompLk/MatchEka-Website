@@ -9,7 +9,7 @@ const LiveMatchTile: React.FC = () => {
     <div>
       <div className="rounded-2xl bg-gray-200 w-full h-full p-3">
         <div className="grid grid-cols-7">
-          <div className="col-start-1 col-span-2 flex justify-between p-3 px-5">
+          <div className="col-start-1 col-span-2 flex justify-between p-3 px-5 lg:p-2 lg:px-3">
             <div className="flex flex-wrap content-center">
               <div className="content-center items-start">
                 <div className="flex justify-center">
@@ -51,11 +51,11 @@ const LiveMatchTile: React.FC = () => {
           <div className="flex col-start-6 col-span-2 justify-around">
             <div className="grid grid-rows-2">
               <div className="row-start-1 flex rounded-3xl bg-blue-800 items-center justify-center px-4 py-2 my-1 text-white">
-                <img src={CHAT_ICO} className="mr-2" />
+                <img src={CHAT_ICO} alt="CHAT_ICO" className="mr-2" />
                 <span className="text-sm">Match Chat</span>
               </div>
               <div className="row-start-2 flex rounded-3xl bg-blue-800 items-center justify-center px-4 py-2 my-1 text-white">
-                <img src={GROUP_ICO} className="mr-2" />
+                <img src={GROUP_ICO} alt="TEAM_ICO" className="mr-2" />
                 <span className="text-sm">My Team</span>
               </div>
             </div>
