@@ -1,18 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import UpcomingMatches from '../components/Home/UpcomingMatchList';
 import AddSlide from '../components/Home/AddSlide';
 import LiveMatchList from '../components/Home/LiveMatchList';
 
 const Home: React.FC = () => {
-  const [data, setData] = useState([]);
+  const [matches, setMatches] = useState([]);
+  const upcomingMatches = matches.filter((match: any) => !match.isLive);
+
   const fetchData = async () => {
     const url = `${process.env.REACT_APP_API_ENDPOINT}/user/matches`;
+    const response = await fetch(url);
+    const data = await response.json();
+    setMatches(data);
   };
+
+  useEffect(() => {
+    try {
+      fetchData();
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
   return (
     <div>
       <div className="hidden 2xl:grid 2xl:grid-cols-3 2xl:m-5">
         <div className="2xl:col-start-1 2xl:w-full">
-          <UpcomingMatches matches={[]} />
+          <UpcomingMatches matches={upcomingMatches} />
         </div>
         <div className="2xl:col-start-2 2xl:col-span-2 2xl:w-full 2xl:mx-5">
           <div className="row-start-2 col-start-2 2xl:w-full 2xl:row-start-1 2xl:h-3/6">
