@@ -1,7 +1,8 @@
-import React from "react";
-import VersusTile from "./VersusTile";
+import React from 'react';
+import { upcomingMatchProps } from '../../types';
+import VersusTile from './VersusTile';
 
-const UpcomingMatches: React.FC = () => {
+const UpcomingMatches = (props: upcomingMatchProps) => {
   return (
     <div className="bg-white rounded-2xl p-6 shadow-lg h-screen w-full">
       <div className="text-right text-xs text-gray-400">
@@ -14,25 +15,9 @@ const UpcomingMatches: React.FC = () => {
         </p>
       </div>
       <div className="mt-10 relative overflow-y-scroll overflow-x-visible h-5/6 rounded-3xl px-2 scrollbar-thin scrollbar-track-white scrollbar-thumb-gray-400">
-        <VersusTile />
-        <br />
-        <VersusTile />
-        <br />
-        <VersusTile />
-        <br />
-        <VersusTile />
-        <br />
-        <VersusTile />
-        <br />
-        <VersusTile />
-        <br />
-        <VersusTile />
-        <br />
-        <VersusTile />
-        <br />
-        <VersusTile />
-        <br />
-        <VersusTile />
+        {props.matches.map((match) => {
+          return <VersusTile {...match} key={match._id} />;
+        })}
       </div>
     </div>
   );
