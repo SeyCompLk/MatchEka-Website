@@ -13,25 +13,16 @@ const UpcomingMatches: React.FC = () => {
           Click on a Match to Choose a Team
         </p>
       </div>
-      <div className="mt-10 relative overflow-y-scroll overflow-x-visible h-5/6 rounded-3xl px-2 scrollbar-thin scrollbar-track-white scrollbar-thumb-gray-400">
+      <div className="block mt-10 relative overflow-y-scroll overflow-x-visible h-5/6 rounded-3xl px-2 scrollbar-thin scrollbar-track-white scrollbar-thumb-gray-400">
         <VersusTile />
-        <br />
         <VersusTile />
-        <br />
         <VersusTile />
-        <br />
         <VersusTile />
-        <br />
         <VersusTile />
-        <br />
         <VersusTile />
-        <br />
         <VersusTile />
-        <br />
         <VersusTile />
-        <br />
         <VersusTile />
-        <br />
         <VersusTile />
       </div>
     </div>

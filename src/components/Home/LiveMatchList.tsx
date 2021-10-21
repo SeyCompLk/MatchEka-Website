@@ -4,10 +4,10 @@ import SLF from "./SL.jpg";
 import CHAT_ICO from "../../assets/icons/chat-ico.png";
 import GROUP_ICO from "../../assets/icons/group-ico.png";
 
-const LiveMatchTile: React.FC = () => {
+export const LiveMatchTile: React.FC = () => {
   return (
     <div>
-      <div className="rounded-2xl bg-gray-200 w-full h-full p-3">
+      <div className="rounded-2xl bg-gray-200 w-full h-full p-3 m-2">
         <div className="grid grid-cols-7">
           <div className="col-start-1 col-span-2 flex justify-between p-3 px-5 lg:p-2 lg:px-3">
             <div className="flex flex-wrap content-center">
@@ -33,13 +33,13 @@ const LiveMatchTile: React.FC = () => {
             </div>
           </div>
           <div className="flex col-start-3 items-center font-medium justify-center">
-            <span className="font-light text-xl italic mr-3">Player</span>
-            <span className="text-xl">25</span>{" "}
+            <span className="font-light xl:text-lg 2xl:text-xl italic mr-3">Player</span>
+            <span className="xl:text-lg 2xl:text-xl">25</span>{" "}
             <sub className="text-sm font-extralight">(12)</sub>
           </div>
           <div className="flex col-start-4 items-center font-medium justify-center">
-            <span className="font-light text-xl italic mr-3">Player</span>
-            <span className="text-xl">25</span>{" "}
+            <span className="font-light xl:text-lg 2xl:text-xl italic mr-3">Player</span>
+            <span className="xl:text-lg 2xl:text-xl">25</span>{" "}
             <sub className="text-sm font-extralight">(12)</sub>
           </div>
           <div className="flex col-start-5 items-center font-medium justify-center">
@@ -68,16 +68,35 @@ const LiveMatchTile: React.FC = () => {
 
 const LiveMatchList: React.FC = () => {
   return (
-    <div className="rounded-2xl bg-white w-full h-full p-10">
-      <div className="w-full inline-flex justify-between">
-        <h1 className="col-start-1 text-3xl">
-          🔴<span className="font-bold"> Live Matches</span>
-        </h1>
-        <h6 className="col-start-2 text-gray-500 text-lg">
-          Select a Team to Vote and Confirm
-        </h6>
+    <div className="lg:h-full">
+      <div className="relative rounded-2xl bg-white w-full h-full p-5">
+        <div className="relative w-full pt-3 pl-3 inline-flex justify-between">
+          <h1 className="text-2xl">
+            🔴<span className="font-bold pl-2"> LIVE MATCHES</span>
+          </h1>
+          <h6 className="text-gray-500 text-lg">
+            Select a Team to Vote and Confirm
+          </h6>
+        </div>
+        <div className="relative mt-10 block p-3 overflow-y-scroll h-5/6 rounded-3xl px-4 pr-6 pb-1 scrollbar-thin scrollbar-track-white scrollbar-thumb-gray-400">
+          <LiveMatchTile/>
+          <LiveMatchTile/>
+          <LiveMatchTile/>
+          <LiveMatchTile/>
+          <LiveMatchTile/>
+        </div>
       </div>
-      <LiveMatchTile />
+      <div className="lg:hidden rounded-2xl bg-white w-full h-full p-10">
+        <div className="w-full">
+          <h1 className="col-start-1 text-lg">
+            <span className="text-lg">🔴</span> <span className="font-bold"> Live Matches</span>
+          </h1>
+          <h6 className="col-start-2 text-gray-500 text-lg">
+            Select a Team to Vote and Confirm
+          </h6>
+        </div>
+        <LiveMatchTile/>
+      </div>
     </div>
   );
 };
