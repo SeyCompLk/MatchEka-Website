@@ -7,6 +7,7 @@ import { Route } from 'react-router-dom';
 
 function App() {
   const ctx = useContext(authContext);
+  console.log(ctx.token);
   return (
     <div className="App">
       <NavBar imgSrc={PRImg}>
