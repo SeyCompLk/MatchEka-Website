@@ -12,7 +12,7 @@ const Home: React.FC = () => {
     <div>
       <div className="hidden 2xl:grid 2xl:grid-cols-3 2xl:m-5">
         <div className="2xl:col-start-1 2xl:w-full">
-          <UpcomingMatches />
+          <UpcomingMatches matches={[]} />
         </div>
         <div className="2xl:col-start-2 2xl:col-span-2 2xl:w-full 2xl:mx-5">
           <div className="row-start-2 col-start-2 2xl:w-full 2xl:row-start-1 2xl:h-3/6">
