@@ -1,3 +1,5 @@
+import { ChangeEventHandler, FocusEventHandler, HTMLAttributes } from 'react';
+
 export interface versusTileProps {
   team1: string;
   team2: string;
@@ -24,4 +26,13 @@ export interface authContextTypes {
   logout: () => void;
   token: string | null;
   isAdmin: boolean;
+}
+
+export interface InputProps {
+  label: string | undefined;
+  type: string | undefined;
+  value: number | string | undefined;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  onBlur: FocusEventHandler<HTMLInputElement>;
+  style: HTMLAttributes<HTMLInputElement>;
 }
