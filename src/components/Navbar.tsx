@@ -25,7 +25,7 @@ const NavBar:React.FC<Props> = ({imgSrc}) => {
           <div className="col-start-2 inline-flex justify-center">
             <img className="hidden lg:flex flex-shrink-0 rounded-2xl md:w-20 md:h-20 w-14 h-14 lg:w-14 lg:h-14" src={imgSrc} alt="Logo"/>
             <div className="flex ml-4 items-center justify-center">
-              <h2 className="text-sm xsm:text-2xl sm:text-3xl md:text-4xl font-bold justify-center">Match Eka</h2>
+              <h2 className="text-sm sm:text-3xl md:text-4xl font-bold justify-center">Match Eka</h2>
             </div>
           </div>
           <div className="inline-flex col-start-3 justify-end items-center">
