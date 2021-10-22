@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import UpcomingMatches from "../components/Home/UpcomingMatchList";
 import AddSlide from "../components/Home/AddSlide";
-import LiveMatchList,{LiveMatchTile} from "../components/Home/LiveMatchList";
+import LiveMatchList from "../components/Home/LiveMatchList";
 
 const Home:React.FC = () => {
 
