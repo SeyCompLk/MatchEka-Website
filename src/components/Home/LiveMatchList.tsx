@@ -22,7 +22,7 @@ export const LiveMatchTile: React.FC = () => {
                 </p>
               </div>
               <div className="block">
-                <div className="text-lg font-medium flex justify-center">
+                <div className="text-base xl:text-lg font-medium flex justify-center">
                   46 / 3
                 </div>
                 <div className="text-sm font-normal flex justify-center">
@@ -33,16 +33,16 @@ export const LiveMatchTile: React.FC = () => {
             <div className="block w-full mt-3 mb-2">
               <div className="font-normal mb-1">SL Batting</div>
               <div className="block w-full">
-                <div className="flex justify-between w-11/12">
-                  <div className="font-light italic">K.Sangakkara</div>
-                  <div>
-                    46<sub className="ml-1">(12.3)</sub>
+                <div className="flex justify-between w-11/12 ml-2">
+                  <div className="text-sm xl:text-base font-light italic">K.Sangakkara</div>
+                  <div className="text-sm xl:text-base">
+                    <span className="font-medium">46</span><sub className="ml-1">(12.3)</sub>
                   </div>
                 </div>
-                <div className="flex justify-between w-11/12">
-                  <div className="font-light italic">M.Jayawardhana</div>
-                  <div>
-                    46<sub className="ml-1">(12.3)</sub>
+                <div className="flex justify-between w-11/12 ml-2">
+                  <div className="text-sm xl:text-base font-light italic">M.Jayawardhana</div>
+                  <div className="text-sm xl:text-base">
+                    <span className="font-medium">46</span><sub className="ml-1">(12.3)</sub>
                   </div>
                 </div>
               </div>
@@ -51,38 +51,48 @@ export const LiveMatchTile: React.FC = () => {
 
           <div className="relative h-full w-full">
             <div className="relative grid grid-rows-2 w-full">
-              <div className="relative h-full flex items-center justify-center w-full">
+              <div className="relative h-full flex items-center justify-center w-full font-medium text-base xl:text-lg">
                 SL Choose to Bat
               </div>
               <div className="relative grid grid-rows-2 w-full">
                   <div className="reltive block w-full">
-                    <div>This Over</div>
-                    <div className="relative w-full inline-flex justify-between pl-2">
+                    <div className="text-gray-500 mb-1">This Over</div>
+                    <div className="relative w-full grid grid-cols-6 pl-2 pr-2">
+                      <svg width="100%" height="30" className="flex justify-center">
+                        <circle strokeWidth="1px" stroke="#000" fill="#fff" cx="50%" cy="50%" r="10"/>
+                        <circle strokeWidth="1px" stroke="#000" fill="#000" cx="50%" cy="50%" r="5"/>
+                      </svg>
                       <svg width="100%" height="30">
-                        <circle strokeWidth="1px" stroke="#000" fill="#fff" cx="10%" cy="15" r="10"/>
-                        <circle strokeWidth="1px" stroke="#000" fill="#000" cx="10%" cy="15" r="5"/>
-                        <circle strokeWidth="1px" stroke="#000" fill="#fff" cx="25%" cy="15" r="10"/>
-                        <circle strokeWidth="1px" stroke="#000" fill="#000" cx="25%" cy="15" r="5"/>
-                        <circle strokeWidth="1px" stroke="#000" fill="#fff" cx="40%" cy="15" r="10"/>
-                        <circle strokeWidth="1px" stroke="#000" fill="#000" cx="40%" cy="15" r="5"/>
-                        <circle strokeWidth="1px" stroke="#000" fill="#fff" cx="55%" cy="15" r="10"/>
-                        <circle strokeWidth="1px" stroke="#000" fill="#000" cx="55%" cy="15" r="5"/>
-                        <circle strokeWidth="1px" stroke="#000" fill="#fff" cx="70%" cy="15" r="10"/>
-                        <circle strokeWidth="1px" stroke="#000" fill="#000" cx="70%" cy="15" r="5"/>
-                        <circle strokeWidth="1px" stroke="#000" fill="#fff" cx="85%" cy="15" r="10"/>
-                        <circle strokeWidth="1px" stroke="#000" fill="#000" cx="85%" cy="15" r="5"/>
+                        <circle strokeWidth="1px" stroke="#000" fill="#fff" cx="50%" cy="50%" r="10"/>
+                        <text x="50%" y="55%" textAnchor="middle" alignmentBaseline="middle" className="font-bold">4</text>
+                      </svg>
+                      <svg width="100%" height="30" className="flex justify-center">
+                        <circle strokeWidth="1px" stroke="#000" fill="#fff" cx="50%" cy="50%" r="10"/>
+                        <text x="50%" y="55%" textAnchor="middle" alignmentBaseline="middle" className="font-bold text-sm">W</text>
+                      </svg>
+                      <svg width="100%" height="30" className="flex justify-center">
+                        <circle strokeWidth="1px" stroke="#000" fill="#fff" cx="50%" cy="50%" r="10"/>
+                        <circle strokeWidth="1px" stroke="#000" fill="#000" cx="50%" cy="50%" r="5"/>
+                      </svg>
+                      <svg width="100%" height="30" className="flex justify-center">
+                        <circle strokeWidth="1px" stroke="#000" fill="#fff" cx="50%" cy="50%" r="10"/>
+                        <circle strokeWidth="1px" stroke="#000" fill="#000" cx="50%" cy="50%" r="5"/>
+                      </svg>
+                      <svg width="100%" height="30" className="flex justify-center">
+                        <circle strokeWidth="1px" stroke="#000" fill="#fff" cx="50%" cy="50%" r="10"/>
+                        <circle strokeWidth="1px" stroke="#fff" fill="#fff" cx="50%" cy="50%" r="5"/>
                       </svg>
                     </div>
                   </div>
                   <div className="relative w-full m-2">
                     <div className="grid grid-cols-2">
                       <div className="flex rounded-3xl bg-blue-800 items-center justify-center px-4 py-2 m-1 text-white">
-                        <img src={CHAT_ICO} alt="CHAT_ICO" className="mr-2" />
-                        <span className="text-sm">Match Chat</span>
+                        <img src={CHAT_ICO} alt="CHAT_ICO" className="w-5/12 xl:w-8 h-auto mr-2" />
+                        <span className="text-sm xl:text-base 2xl:text-lg">Chat</span>
                       </div>
                       <div className="flex rounded-3xl bg-blue-800 items-center justify-center px-4 py-2 m-1 text-white">
-                        <img src={GROUP_ICO} alt="TEAM_ICO" className="mr-2" />
-                        <span className="text-sm">My Team</span>
+                        <img src={GROUP_ICO} alt="TEAM_ICO" className="w-5/12 xl:w-8 h-auto mr-2" />
+                        <span className="text-sm xl:text-base 2xl:text-lg">Team</span>
                       </div>
                     </div>
                   </div>
@@ -93,7 +103,7 @@ export const LiveMatchTile: React.FC = () => {
           <div className="grid grid-rows-2 w-full">
             <div className="flex justify-between items-center">
               <div className="block">
-                <div className="text-lg font-medium flex justify-center">
+                <div className="text-base xl:text-lg font-medium flex justify-center">
                   Yet to Bat
                 </div>
                 <div className="text-sm font-normal flex justify-center">
@@ -113,18 +123,18 @@ export const LiveMatchTile: React.FC = () => {
               
             </div>
             <div className="block w-full mt-3 mb-2">
-              <div className="font-normal mb-1">SA Bowling</div>
+              <div className="text-sm xl:text-base font-normal mb-1">SA Bowling</div>
               <div className="block w-full">
-                <div className="flex justify-between w-11/12">
-                  <div className="font-light italic">K.Rabada</div>
-                  <div>
-                    46<sub className="ml-1">(12.3)</sub>
+                <div className="flex justify-between w-11/12 ml-2">
+                  <div className="text-sm xl:text-base font-light italic">K.Rabada</div>
+                  <div className="text-sm xl:text-base">
+                    <span className="font-medium">46</span><sub className="ml-1">(12.3)</sub>
                   </div>
                 </div>
-                <div className="flex justify-between w-11/12">
-                  <div className="font-light italic">W.Mulder</div>
-                  <div>
-                    46<sub className="ml-1">(12.3)</sub>
+                <div className="flex justify-between w-11/12 ml-2">
+                  <div className="text-sm xl:text-base font-light italic">W.Mulder</div>
+                  <div className="text-sm xl:text-base">
+                    <span className="font-medium">46</span><sub className="ml-1">(12.3)</sub>
                   </div>
                 </div>
               </div>
@@ -132,8 +142,13 @@ export const LiveMatchTile: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {                                                                                                         }
+
       <div className="flex lg:hidden">
-        <div className="grid grid-cols-3"></div>
+        <div className="grid grid-cols-3">
+
+        </div>
       </div>
     </div>
   );
@@ -176,6 +191,26 @@ const LiveMatchList: React.FC = () => {
 };
 
 export default LiveMatchList;
+
+/*
+
+<svg className="relative" width="100%" height="30">
+                        <circle strokeWidth="1px" stroke="#000" fill="#fff" cx="10%" cy="15" r="10"/>
+                        <circle strokeWidth="1px" stroke="#000" fill="#000" cx="10%" cy="15" r="5"/>
+                        <circle strokeWidth="1px" stroke="#000" fill="#fff" cx="25%" cy="15" r="10"/>
+                        <circle strokeWidth="1px" stroke="#000" fill="#000" cx="25%" cy="15" r="5"/>
+                        <circle strokeWidth="1px" stroke="#000" fill="#fff" cx="40%" cy="15" r="10"/>
+                        <circle strokeWidth="1px" stroke="#000" fill="#000" cx="40%" cy="15" r="5"/>
+                        <circle strokeWidth="1px" stroke="#000" fill="#fff" cx="55%" cy="15" r="10"/>
+                        <circle strokeWidth="1px" stroke="#000" fill="#000" cx="55%" cy="15" r="5"/>
+                        <circle strokeWidth="1px" stroke="#000" fill="#fff" cx="70%" cy="15" r="10"/>
+                        <circle strokeWidth="1px" stroke="#000" fill="#000" cx="70%" cy="15" r="5"/>
+                        <circle strokeWidth="1px" stroke="#000" fill="#fff" cx="85%" cy="15" r="10"/>
+                        <circle strokeWidth="1px" stroke="#000" fill="#000" cx="85%" cy="15" r="5"/>
+                      </svg>
+
+*/
+
 
 /*
 
