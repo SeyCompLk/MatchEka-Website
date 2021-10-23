@@ -35,4 +35,5 @@ export interface InputProps {
   onChange: ChangeEventHandler<HTMLInputElement>;
   onBlur: FocusEventHandler<HTMLInputElement>;
   style: HTMLAttributes<HTMLInputElement>;
+  placeholder: string | undefined;
 }
