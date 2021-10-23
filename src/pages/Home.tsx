@@ -89,15 +89,15 @@ const Home: React.FC = () => {
                 <div className="w-full row-start-3 row-span-4 px-2 py-3">
                   <div className="relative p-2 w-full h-full">
                     {isLive ? (
-                      <div className="h-full">
-                        <LiveMatchList data-testid="resp-live-tile" />
+                      <div className="h-full" data-testid="resp-live-tile">
+                        <LiveMatchList />
                       </div>
                     ) : (
-                      <div className="relative h-full">
-                        <UpcomingMatches
-                          matches={upcomingMatches}
-                          data-testid="resp-upcoming-tile"
-                        />
+                      <div
+                        className="relative h-full"
+                        data-testid="resp-upcoming-tile"
+                      >
+                        <UpcomingMatches matches={upcomingMatches} />
                       </div>
                     )}
                   </div>
