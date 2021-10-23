@@ -65,6 +65,7 @@ const Home: React.FC = () => {
                   <div className="relative bg-blue-600 rounded-3xl w-8/12 xsm:w-6/12 grid grid-cols-2 overflow-hidden h-8 mb-2">
                     <button
                       id="live-btn"
+                      data-testid="live-btn"
                       onClick={toogleBtn}
                       style={{ backgroundColor: btnColors[0] }}
                       className="flex justify-center flex-shrink-0 items-center object-fill font-semibold border-r-2 border-black w-full h-full bg-white text-sm xsm:text-base"
@@ -73,6 +74,7 @@ const Home: React.FC = () => {
                     </button>
                     <button
                       id="upcoming-btn"
+                      data-testid="upcoming-btn"
                       onClick={() => {
                         setIsLive(!isLive);
                         setButtonColors([btnColors[1], 'light-blue']);
@@ -87,12 +89,15 @@ const Home: React.FC = () => {
                 <div className="w-full row-start-3 row-span-4 px-2 py-3">
                   <div className="relative p-2 w-full h-full">
                     {isLive ? (
-                      <div className="relative h-full">
-                        <UpcomingMatches matches={upcomingMatches} />
+                      <div className="h-full">
+                        <LiveMatchList data-testid="resp-live-tile" />
                       </div>
                     ) : (
-                      <div className="h-full">
-                        <LiveMatchList />
+                      <div className="relative h-full">
+                        <UpcomingMatches
+                          matches={upcomingMatches}
+                          data-testid="resp-upcoming-tile"
+                        />
                       </div>
                     )}
                   </div>
