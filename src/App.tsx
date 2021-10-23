@@ -4,6 +4,7 @@ import NavBar from './components/UI/Navbar';
 import PRImg from '../src/assets/icons/me-logo.png';
 import UserLogin from './pages/Login';
 import UserRegister from './pages/SignUp';
+import Leaderboard from './pages/Leaderboard';
 import { authContext } from './context/authContext';
 import { Route, Redirect } from 'react-router-dom';
 import './App.css';
@@ -15,6 +16,9 @@ function App() {
     <NavBar imgSrc={PRImg}>
       <Route path="/" exact>
         <Home />
+      </Route>
+      <Route path="/leaderboard" exact>
+        <Leaderboard />
       </Route>
       <Route path="/user/login">
         {ctx.token === null ? <UserLogin /> : <Redirect to="/" />}
