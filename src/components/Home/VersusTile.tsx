@@ -33,6 +33,15 @@ const VersusTile = (props: versusTileProps) => {
             <p className="flex justify-center font-medium">{props.team2}</p>
           </div>
         </div>
+        <div className="xl:mr-2 2xl:mr-4 ml-3">
+          <div className="text-xs 2xl:text-sm font-bold">
+            SUNDAY, OCTOBER 20
+          </div>
+          <div className="text-xs 2xl:text-sm font-semibold">7 PM</div>
+          <div className="text-xs 2xl:text-sm pt-3 italic font-light">
+            √ Team
+          </div>
+        </div>
       </div>
       <div className="mr-4 ml-3">
         <div className="text-sm font-bold">{props.date}</div>
