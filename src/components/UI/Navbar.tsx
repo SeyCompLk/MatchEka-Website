@@ -1,11 +1,16 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useContext } from 'react';
+import { NavLink } from 'react-router-dom';
+import { authContext } from '../../context/authContext';
+
+import classes from './NavBar.module.css';
 
 interface Props {
   imgSrc: string;
-  children: ReactElement;
+  children: ReactElement[];
 }
 
 const NavBar = ({ imgSrc, children }: Props) => {
+  const ctx = useContext(authContext);
   return (
     <>
       <nav className="w-full justify-between inline-flex p-5 shadow-md rounded-xl items-center bg-white">
@@ -40,11 +45,28 @@ const NavBar = ({ imgSrc, children }: Props) => {
         </div>
         <div className="hidden lg:flex">
           <ul className="inline-flex font-semibold items-center">
-            <li className="navbar-link">Home</li>
-            <li className="navbar-link">Rewards</li>
-            <li className="navbar-link">Leaderboard</li>
-            <li className="navbar-link">Previous Matches</li>
-            <li className="navbar-link">About</li>
+            <li className={`navbar-link ${classes.Navigator}`}>
+              <NavLink to="/" activeClassName={classes.Active} exact>
+                Home
+              </NavLink>
+            </li>
+            {/* <li className={`${classes.Navigator} navbar-link`}>
+              <NavLink to="/rewards">Rewards</NavLink>
+            </li> */}
+            <li className={`${classes.Navigator} navbar-link`}>
+              <NavLink to="/leaderboard">Leaderboard</NavLink>
+            </li>
+            {/* <li className={`${classes.Navigator} navbar-link`}>
+              <NavLink to="/pastmatches">Previous Matches</NavLink>
+            </li> */}
+            <li className={`${classes.Navigator} navbar-link`}>
+              <NavLink to="/about">About</NavLink>
+            </li>
+            {!ctx.token && (
+              <li className={`${classes.Navigator} navbar-link`}>
+                <NavLink to="/user/login">Login</NavLink>
+              </li>
+            )}
           </ul>
           <img
             src={imgSrc}

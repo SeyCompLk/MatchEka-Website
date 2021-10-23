@@ -1,0 +1,9 @@
+.Navigator {
+  cursor: pointer;
+  transition: 0.3s color ease-out;
+}
+.Navigator:hover,
+.Navigator:active,
+.Active {
+  color: rgba(139, 139, 139, 0.973);
+}
