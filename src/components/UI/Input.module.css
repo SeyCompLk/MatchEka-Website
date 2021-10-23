@@ -1,0 +1,12 @@
+.Input {
+  padding: 5px 10px;
+  border-radius: 100px;
+  background: #e0e2e7;
+  font-family: 'Roboto', sans-serif;
+  color: #3f3f3f;
+}
+
+.Container {
+  width: 80%;
+  margin: auto;
+}

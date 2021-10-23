@@ -4,7 +4,7 @@ import { InputProps } from '../../types';
 import classes from './Input.module.css';
 
 const Input = forwardRef((props: InputProps, ref) => {
-  const inputRef = useRef<HTMLInputElement>();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const activate = () => {
     inputRef.current?.focus();
@@ -17,18 +17,19 @@ const Input = forwardRef((props: InputProps, ref) => {
   });
 
   return (
-    <>
+    <div className={classes.Container}>
       {props.label && <label>{props.label}</label>}
       <input
         type={props.type}
         value={props.value}
         onChange={props.onChange}
         onBlur={props.onBlur}
-        //ref={inputRef}
+        ref={inputRef}
         className={classes.Input}
+        placeholder={props.placeholder}
         style={props.style}
       />
-    </>
+    </div>
   );
 });
 
