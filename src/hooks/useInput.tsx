@@ -1,17 +1,17 @@
-import { ChangeEvent, useRef, useState } from 'react';
+import { ChangeEventHandler, FocusEventHandler, useRef, useState } from 'react';
 
 const useInput = (validator: (inputVale: string) => boolean) => {
   const [inputValue, setInputValue] = useState('');
   const [inputTouched, setInputTouched] = useState(false);
-  const inputRef = useRef<HTMLInputElement>();
+  const inputRef = useRef<HTMLInputElement>(null);
   const isInputValid = validator(inputValue);
   const hasError = !isInputValid && inputTouched;
 
-  const valueChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+  const valueChangeHandler: ChangeEventHandler<HTMLInputElement> = (event) => {
     setInputValue(event.target.value);
   };
 
-  const inputBlurHandler = () => {
+  const inputBlurHandler: FocusEventHandler<HTMLInputElement> = () => {
     setInputTouched(true);
   };
 
