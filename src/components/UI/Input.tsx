@@ -29,6 +29,7 @@ const Input = forwardRef((props: InputProps, ref) => {
         placeholder={props.placeholder}
         style={props.style}
       />
+      {props.hasError && <div className="error">{props.errorMessage}</div>}
     </div>
   );
 });
