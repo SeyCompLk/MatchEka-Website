@@ -1,12 +1,43 @@
 .Input {
-  padding: 5px 10px;
+  padding: 10px 15px;
   border-radius: 100px;
-  background: #e0e2e7;
+  background: #dadada;
   font-family: 'Roboto', sans-serif;
-  color: #3f3f3f;
+  color: #000000;
+  width: 100%;
+  font-weight: 300;
+  margin-bottom: 5px;
+  outline: none;
 }
 
 .Container {
   width: 80%;
   margin: auto;
+  margin-bottom: 20px;
+}
+
+.Container div {
+  margin-left: 15px;
+}
+
+@media (max-width: 430px) {
+  .Input {
+    text-align: center;
+  }
+  .Container div {
+    margin-left: 15px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .Container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 300px) {
+  .Input {
+    font-size: 0.7rem;
+  }
 }
