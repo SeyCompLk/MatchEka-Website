@@ -1,4 +1,11 @@
-import { ChangeEventHandler, FocusEventHandler, HTMLAttributes } from 'react';
+import {
+  ChangeEventHandler,
+  FocusEventHandler,
+  HTMLAttributes,
+  MouseEventHandler,
+  ReactElement,
+  Ref,
+} from 'react';
 
 export interface versusTileProps {
   team1: string;
@@ -36,4 +43,14 @@ export interface InputProps {
   onBlur: FocusEventHandler<HTMLInputElement>;
   style: HTMLAttributes<HTMLInputElement>;
   placeholder: string | undefined;
+  hasError: boolean;
+  errorMessage: string;
+  ref: Ref<HTMLInputElement>;
+}
+
+export interface ButtonProps {
+  type: 'button' | 'submit' | 'reset' | undefined;
+  style: HTMLAttributes<HTMLButtonElement> | undefined;
+  children: ReactElement;
+  onClick: MouseEventHandler<HTMLButtonElement> | undefined;
 }
