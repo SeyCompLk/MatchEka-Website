@@ -17,7 +17,10 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      fontWeight: ["hover"],
+      padding: ["hover"],
+    },
   },
   plugins: [require("tailwind-scrollbar")],
 };
