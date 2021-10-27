@@ -87,7 +87,7 @@ const Login = () => {
           </div>
           <Form email={validatorArr.email} pwd={validatorArr.pwd} />
           {message && <div className="error">{message}</div>}
-          <Button type="submit" style={undefined}>
+          <Button type="submit" style={undefined} data-testid="submit-button">
             <span>Login</span>
           </Button>
 
