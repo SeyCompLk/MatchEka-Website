@@ -106,11 +106,6 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="2xl:w-full 2xl:row-start-2 2xl:h-3/6">
-          <div className="2xl:h-full 2xl:pt-5 2xl:pl-5 2xl:pr-5">
-            <LiveMatchList />
-          </div>
-        </div>
       </div>
       <div className="lg:hidden grid grid-rows-2">
         <div className="row-start-1">
