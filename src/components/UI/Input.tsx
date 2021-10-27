@@ -17,7 +17,7 @@ const Input = forwardRef((props: InputProps, ref) => {
   });
 
   return (
-    <div className={classes.Container}>
+    <div className={classes.Container} style={props.style}>
       {props.label && <label>{props.label}</label>}
       <input
         type={props.type}
@@ -27,9 +27,12 @@ const Input = forwardRef((props: InputProps, ref) => {
         ref={inputRef}
         className={classes.Input}
         placeholder={props.placeholder}
-        style={props.style}
       />
-      {props.hasError && <div className="error">{props.errorMessage}</div>}
+      {props.hasError && (
+        <div className="error" data-testid="error-message">
+          {props.errorMessage}
+        </div>
+      )}
     </div>
   );
 });

@@ -14,8 +14,8 @@ const Login = () => {
   );
   const pwdValidator = useInput((inputVal) => inputVal.trim().length > 6);
   const [message, setMessage] = useState<string | null>(null);
-  const validatorArr: InputProps[] = [
-    {
+  const validatorArr: { email: InputProps; pwd: InputProps } = {
+    email: {
       type: 'text',
       value: emailValidator.inputValue,
       onChange: emailValidator.valueChangeHandler,
@@ -27,9 +27,9 @@ const Login = () => {
       label: undefined,
       style: {},
     },
-    {
+    pwd: {
       type: 'text',
-      value: pwdValidator.inputValue,
+      value: emailValidator.inputValue,
       onChange: pwdValidator.valueChangeHandler,
       onBlur: pwdValidator.inputBlurHandler,
       placeholder: 'Enter your password',
@@ -39,32 +39,38 @@ const Login = () => {
       label: undefined,
       style: {},
     },
-  ];
+  };
 
   const ctx = useContext(authContext);
 
   const submitFormHandler: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
 
-    const body = {
-      email: emailValidator.inputValue,
-      password: pwdValidator.inputValue,
-    };
+    if (emailValidator.hasError) return emailValidator.focusHandler();
 
-    const url = `${process.env.REACT_APP_API_ENDPOINT}user/login`;
-    const response = await fetch(url, {
-      method: 'POST',
-      body: JSON.stringify(body),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    const data = await response.json();
-    if (data.success) {
-      ctx.login(data.token, false, data.expiresOn);
-    } else {
-      setMessage(data.message);
-    }
+    if (pwdValidator.hasError) return pwdValidator.focusHandler();
+
+    // const body = {
+    //   email: emailValidator.inputValue,
+    //   password: pwdValidator.inputValue,
+    // };
+
+    // const url = `${process.env.REACT_APP_API_ENDPOINT}user/login`;
+    // const response = await fetch(url, {
+    //   method: 'POST',
+    //   body: JSON.stringify(body),
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    // });
+    // const data = await response.json();
+    // if (data.success) {
+    //   ctx.login(data.token, false, data.expiresOn);
+    // } else {
+    //   setMessage(data.message);
+    // }
+
+    console.log('Submitting...');
   };
   return (
     <>
@@ -79,9 +85,9 @@ const Login = () => {
             <h1>Login</h1>
             <p>Welcome to match eka!</p>
           </div>
-          <Form validators={validatorArr} />
+          <Form email={validatorArr.email} pwd={validatorArr.pwd} />
           {message && <div className="error">{message}</div>}
-          <Button type="submit" style={undefined} onClick={undefined}>
+          <Button type="submit" style={undefined}>
             <span>Login</span>
           </Button>
 

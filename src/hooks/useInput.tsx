@@ -17,7 +17,7 @@ const useInput = (validator: (inputVale: string) => boolean) => {
 
   const focusHandler = () => {
     setInputTouched(true);
-    inputRef.current?.focus();
+    if (inputRef.current) inputRef.current.focus();
   };
 
   const reset = () => {
