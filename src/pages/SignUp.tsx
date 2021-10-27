@@ -141,12 +141,12 @@ const SignUp = () => {
           <Form validators={validators} />
           {message && <div className="error">{message}</div>}
           <Button type="submit" style={undefined}>
-            <span>Login</span>
+            <span>Register</span>
           </Button>
 
           <div className={classes.CreateCont}>
             <h1>Already have an account?</h1>
-            <Link to="/user/register">login</Link>
+            <Link to="/user/login">login</Link>
           </div>
         </form>
       </div>
