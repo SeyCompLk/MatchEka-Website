@@ -29,7 +29,7 @@ const Login = () => {
     },
     pwd: {
       type: 'text',
-      value: emailValidator.inputValue,
+      value: pwdValidator.inputValue,
       onChange: pwdValidator.valueChangeHandler,
       onBlur: pwdValidator.inputBlurHandler,
       placeholder: 'Enter your password',
@@ -46,9 +46,9 @@ const Login = () => {
   const submitFormHandler: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
 
-    if (emailValidator.hasError) return emailValidator.focusHandler();
+    if (!emailValidator.isInputValid) return emailValidator.focusHandler();
 
-    if (pwdValidator.hasError) return pwdValidator.focusHandler();
+    if (!pwdValidator.isInputValid) return pwdValidator.focusHandler();
 
     // const body = {
     //   email: emailValidator.inputValue,
