@@ -50,27 +50,25 @@ const Login = () => {
 
     if (!pwdValidator.isInputValid) return pwdValidator.focusHandler();
 
-    // const body = {
-    //   email: emailValidator.inputValue,
-    //   password: pwdValidator.inputValue,
-    // };
+    const body = {
+      email: emailValidator.inputValue,
+      password: pwdValidator.inputValue,
+    };
 
-    // const url = `${process.env.REACT_APP_API_ENDPOINT}user/login`;
-    // const response = await fetch(url, {
-    //   method: 'POST',
-    //   body: JSON.stringify(body),
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    // });
-    // const data = await response.json();
-    // if (data.success) {
-    //   ctx.login(data.token, false, data.expiresOn);
-    // } else {
-    //   setMessage(data.message);
-    // }
-
-    console.log('Submitting...');
+    const url = `${process.env.REACT_APP_API_ENDPOINT}user/login`;
+    const response = await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const data = await response.json();
+    if (data.success) {
+      ctx.login(data.token, false, data.expiresOn);
+    } else {
+      setMessage(data.message);
+    }
   };
   return (
     <>
