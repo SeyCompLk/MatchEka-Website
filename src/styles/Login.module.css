@@ -1,0 +1,78 @@
+.Container {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+}
+
+.MiddleBar {
+  height: 70vh;
+  width: 0.5%;
+  background-color: gray;
+}
+
+.BrandBar {
+  width: 49.75%;
+  text-align: center;
+}
+
+.FormBar {
+  width: 49.75%;
+  text-align: center;
+}
+
+.Topic {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.Topic h1 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.CreateCont {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.CreateCont h1 {
+  font-weight: 300;
+}
+
+.CreateCont a {
+  color: #0b4252;
+  cursor: pointer;
+}
+
+.NavCont {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 20px;
+  height: 10vh;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #707070;
+  background-color: white;
+}
+
+@media (max-width: 680px) {
+  .Container {
+    flex-direction: column;
+  }
+  .MiddleBar {
+    display: none;
+  }
+  .BrandBar,
+  .FormBar {
+    width: 90%;
+  }
+  .BrandBar {
+    margin-bottom: 50px;
+  }
+}

@@ -198,7 +198,7 @@ export const LiveMatchTile: React.FC = () => {
                 </div>
                 <div className="relative w-full m-2">
                   <div className="grid grid-cols-2">
-                    <div className="flex rounded-3xl bg-blue-800 items-center justify-center px-4 py-2 m-1 text-white">
+                    <div className="flex rounded-3xl bg-blue-800 items-center justify-center px-4 py-2 m-1 text-white cursor-pointer">
                       <img
                         src={CHAT_ICO}
                         alt="CHAT_ICO"
@@ -208,7 +208,7 @@ export const LiveMatchTile: React.FC = () => {
                         Chat
                       </span>
                     </div>
-                    <div className="flex rounded-3xl bg-blue-800 items-center justify-center px-4 py-2 m-1 text-white">
+                    <div className="flex rounded-3xl bg-blue-800 items-center justify-center px-4 py-2 m-1 text-white cursor-pointer">
                       <img
                         src={GROUP_ICO}
                         alt="TEAM_ICO"
@@ -287,9 +287,19 @@ const LiveMatchList: React.FC = () => {
   return (
     <div className="lg:h-full">
       <div className="relative rounded-2xl bg-white w-full h-full p-5">
-        <div className="relative w-full pt-3 pl-3 inline-flex justify-between">
+        <div className=" relative w-full pt-3 pl-3 justify-between">
           <h1 className="text-2xl">
-            🔴<span className="font-bold pl-2"> LIVE MATCHES</span>
+            <div className="flex items-center">
+              <div
+                style={{
+                  width: '20px',
+                  height: '20px',
+                  borderRadius: '50%',
+                  backgroundColor: 'red',
+                }}
+              ></div>
+              <span className="font-bold pl-2"> LIVE MATCHES</span>
+            </div>
           </h1>
           <h6 className="text-gray-500 text-lg">
             Select a Team to Vote and Confirm

@@ -1,4 +1,11 @@
-import { ChangeEventHandler, FocusEventHandler, HTMLAttributes } from 'react';
+import {
+  ChangeEventHandler,
+  CSSProperties,
+  FocusEventHandler,
+  HTMLAttributes,
+  ReactElement,
+  RefObject,
+} from 'react';
 
 export interface versusTileProps {
   team1: string;
@@ -34,8 +41,17 @@ export interface InputProps {
   value: number | string | undefined;
   onChange: ChangeEventHandler<HTMLInputElement>;
   onBlur: FocusEventHandler<HTMLInputElement>;
-  style: HTMLAttributes<HTMLInputElement>;
+  style: CSSProperties;
   placeholder: string | undefined;
+  hasError: boolean;
+  errorMessage: string;
+  ref: RefObject<HTMLInputElement>;
+}
+
+export interface ButtonProps {
+  type: 'button' | 'submit' | 'reset' | undefined;
+  style: HTMLAttributes<HTMLButtonElement> | undefined;
+  children: ReactElement;
 }
 
 export interface LeaderboardProps {

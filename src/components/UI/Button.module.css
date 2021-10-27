@@ -1,0 +1,23 @@
+.Button {
+  width: 80%;
+  padding: 10px 15px;
+  background-color: #0b4252;
+
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 375px) {
+  .Button {
+    width: 90%;
+  }
+}
+
+@media (max-width: 300px) {
+  .Button {
+    font-size: 0.7rem;
+  }
+}
