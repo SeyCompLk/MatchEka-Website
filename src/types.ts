@@ -1,10 +1,10 @@
 import {
   ChangeEventHandler,
+  CSSProperties,
   FocusEventHandler,
   HTMLAttributes,
-  MouseEventHandler,
   ReactElement,
-  Ref,
+  RefObject,
 } from 'react';
 
 export interface versusTileProps {
@@ -41,16 +41,15 @@ export interface InputProps {
   value: number | string | undefined;
   onChange: ChangeEventHandler<HTMLInputElement>;
   onBlur: FocusEventHandler<HTMLInputElement>;
-  style: HTMLAttributes<HTMLInputElement>;
+  style: CSSProperties;
   placeholder: string | undefined;
   hasError: boolean;
   errorMessage: string;
-  ref: Ref<HTMLInputElement>;
+  ref: RefObject<HTMLInputElement>;
 }
 
 export interface ButtonProps {
   type: 'button' | 'submit' | 'reset' | undefined;
   style: HTMLAttributes<HTMLButtonElement> | undefined;
   children: ReactElement;
-  onClick: MouseEventHandler<HTMLButtonElement> | undefined;
 }
