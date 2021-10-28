@@ -55,12 +55,12 @@ export interface ButtonProps {
 }
 
 export interface LeaderboardProps {
-  competitors:{
+  competitors: {
     name: string;
     pos: number;
     points: number;
   }[];
-  prevWinners:{
+  prevWinners: {
     name: string;
     pos: number;
     points: number;
