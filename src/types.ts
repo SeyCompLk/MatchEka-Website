@@ -53,3 +53,20 @@ export interface ButtonProps {
   style: HTMLAttributes<HTMLButtonElement> | undefined;
   children: ReactElement;
 }
+
+export interface LeaderboardProps {
+  competitors: {
+    name: string;
+    pos: number;
+    points: number;
+  }[];
+  prevWinners: {
+    name: string;
+    pos: number;
+    points: number;
+  }[];
+  currMonth: string;
+  currWeek: string;
+  prevMonth: string;
+  prevWeek: string;
+}
