@@ -1,0 +1,48 @@
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.Brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Brand span {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.Brand .BrandName {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.Nav ul {
+  list-style: none;
+}
+
+.Nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.Nav ul li:last-child {
+  margin-right: none;
+}
+
+.Nav a {
+  transition: 0.5s all ease;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.Nav a:hover,
+.Nav a:active,
+a.Active {
+  padding-bottom: 5px;
+  border-bottom: 3px solid black;
+}
