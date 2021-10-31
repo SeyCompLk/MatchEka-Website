@@ -6,9 +6,9 @@ import Button from '../components/UI/Button';
 import classes from '../styles/Login.module.css';
 import { InputProps } from '../types';
 import { authContext } from '../context/authContext';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
-const Login = () => {
+const Login = (props: { isAdmin: boolean }) => {
   const emailValidator = useInput(
     (inputVal) => inputVal.includes('@') && !inputVal.includes(' ')
   );
@@ -42,6 +42,7 @@ const Login = () => {
   };
 
   const ctx = useContext(authContext);
+  const history = useHistory();
 
   const submitFormHandler: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
@@ -55,7 +56,9 @@ const Login = () => {
       password: pwdValidator.inputValue,
     };
 
-    const url = `${process.env.REACT_APP_API_ENDPOINT}user/login`;
+    const url = `${process.env.REACT_APP_API_ENDPOINT}${
+      props.isAdmin ? 'admin' : 'user'
+    }/login`;
     const response = await fetch(url, {
       method: 'POST',
       body: JSON.stringify(body),
@@ -64,15 +67,21 @@ const Login = () => {
       },
     });
     const data = await response.json();
+    console.log(data);
     if (data.success) {
-      ctx.login(data.token, false, data.expiresOn);
+      ctx.login(data.token, props.isAdmin, data.expiresOn);
+      if (props.isAdmin) {
+        history.replace('/admin');
+      } else {
+        history.replace('/');
+      }
     } else {
       setMessage(data.message);
     }
   };
   return (
     <>
-      <div className={classes.NavCont}>About</div>
+      {!props.isAdmin && <div className={classes.NavCont}>About</div>}
       <div className={classes.Container}>
         <div className={classes.BrandBar}>
           <Brand />
