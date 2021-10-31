@@ -10,8 +10,6 @@ const Overview = (props: MatchOverviewProps) => {
 
   const scoreChangehandler = (runs: number) => {
     setScore(runs);
-    console.log(score);
-    console.log(isRotated);
   };
 
   const batsmanRoatateHandler: ChangeEventHandler<HTMLInputElement> = (e) => {
