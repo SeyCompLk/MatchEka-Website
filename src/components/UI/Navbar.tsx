@@ -6,7 +6,7 @@ import classes from './NavBar.module.css';
 
 interface Props {
   imgSrc: string;
-  children: ReactElement[];
+  children: ReactElement | ReactElement[];
 }
 
 const NavBar = ({ imgSrc, children }: Props) => {
