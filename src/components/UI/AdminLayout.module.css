@@ -3,6 +3,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
+  height: 10vh;
+}
+
+.Header img {
+  height: 50px;
+  width: auto;
 }
 
 .Brand {
@@ -19,6 +25,7 @@
 .Brand .BrandName {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
+  margin-right: 10px;
 }
 
 .Nav ul {
