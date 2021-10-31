@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react';
-import { useParams, Switch, Route, useLocation } from 'react-router-dom';
+import { useParams, Switch, Route } from 'react-router-dom';
 import Overview from '../../components/Admin/Overview';
 import { authContext } from '../../context/authContext';
 import { MatchOverviewProps, ScoreBoardResponse } from '../../types';
@@ -43,9 +43,6 @@ const SingleMatch = () => {
     currBowler: fullData?.scoreBoard.currBowler,
   };
 
-  const { search } = useLocation();
-  const query = new URLSearchParams(search);
-  const tab = query.get('tab');
   //data fetcing
   const [loading, setLoading] = useState(false);
   const ctx = useContext(authContext);
@@ -77,24 +74,24 @@ const SingleMatch = () => {
       ) : (
         <>
           <div></div>
-          {tab === 'scorecard' ? (
-            <div>Scorecard</div>
-          ) : tab === 'toss' ? (
-            <div>Toss</div>
-          ) : (
-            <Overview
-              team1="Sri Lanka"
-              team2="South Africa"
-              inning={1}
-              score={50}
-              wickets={5}
-              overs={15}
-              bowls={3}
-              currStriker={{ name: 'Shakya', score: 25, bowls: 32 }}
-              nonStriker={{ name: 'Shakya', score: 25, bowls: 32 }}
-              currBowler={{ name: 'Sakithma', overs: 10, wickets: 3 }}
-            />
-          )}
+          <Switch>
+            <Route path="/" exact>
+              <Overview
+                team1="Sri Lanka"
+                team2="South Africa"
+                inning={1}
+                score={50}
+                wickets={5}
+                overs={15}
+                bowls={3}
+                currStriker={{ name: 'Shakya', score: 25, bowls: 32 }}
+                nonStriker={{ name: 'Shakya', score: 25, bowls: 32 }}
+                currBowler={{ name: 'Sakithma', overs: 10, wickets: 3 }}
+              />
+            </Route>
+            <Route path="/full-score"></Route>
+            <Route path="/toss"></Route>
+          </Switch>
         </>
       )}
     </>
