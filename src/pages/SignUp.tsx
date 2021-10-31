@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import classes from '../styles/Register.module.css';
 import { authContext } from '../context/authContext';
 
-const SignUp = (props: { isAdmin: boolean }) => {
+const SignUp = () => {
   const [message, setMessage] = useState<string | null>(null);
   const numberValidator = useInput(
     (inputVal) => inputVal.trim().length === 10 && inputVal.startsWith('0')
@@ -111,9 +111,7 @@ const SignUp = (props: { isAdmin: boolean }) => {
       contactNo: numberValidator.inputValue,
     };
 
-    const url = `${process.env.REACT_APP_API_ENDPOINT}${
-      props.isAdmin ? 'admin' : 'user'
-    }/register`;
+    const url = `${process.env.REACT_APP_API_ENDPOINT}user/register`;
     const response = await fetch(url, {
       method: 'POST',
       body: JSON.stringify(body),

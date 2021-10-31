@@ -32,6 +32,7 @@ const AuthContextProvider = (props: { children: ReactElement }) => {
   const [isAdmin, setIsAdmin] = useState<boolean>(
     localStorage.getItem('isAdmin') === 'true'
   );
+
   const login = (token: string, isAdmin: boolean, expiresOn: string) => {
     localStorage.setItem('token', token);
     localStorage.setItem('isAdmin', isAdmin ? 'true' : 'false');
