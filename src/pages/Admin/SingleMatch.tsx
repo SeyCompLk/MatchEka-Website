@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react';
-import { useParams, Switch, Route, useLocation } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import Overview from '../../components/Admin/Overview';
 import { authContext } from '../../context/authContext';
 import { MatchOverviewProps, ScoreBoardResponse } from '../../types';
@@ -66,6 +66,7 @@ const SingleMatch = () => {
   // 6171734c303f363e5a14c05d
   // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNoYWt5YWltYW5qaXRoMzJAZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjM0ODIzNTc4LCJleHAiOjE2MzQ5OTYzNzh9.0OyJNjs7NDfYlK8DugnTMQAzlIOhIQuuzZNLnWoMH0s
 
+  console.log(overview);
   useEffect(() => {
     fetchData();
   }, [fetchData]);
