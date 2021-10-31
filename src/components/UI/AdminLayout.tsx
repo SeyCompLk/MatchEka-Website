@@ -7,41 +7,36 @@ import { authContext } from '../../context/authContext';
 const AdminLayout = (props: { children: ReactElement | ReactElement[] }) => {
   const ctx = useContext(authContext);
   return (
-    <>
-      <header className={classes.Header}>
-        <div className={classes.Brand}>
-          <img src={Logo} alt="logo" />
-          <span className={classes.BrandName}>Match Eka</span>
-          <span>|Admin</span>
-        </div>
-        <nav className={classes.Nav}>
-          <ul>
-            <li>
-              <NavLink to="/admin/" activeClassName={classes.Active}>
-                Home
-              </NavLink>
+    <header className={classes.Header}>
+      <div className={classes.Brand}>
+        <img src={Logo} alt="logo" />
+        <span className={classes.BrandName}>Match Eka</span>
+        <span>Admin</span>
+      </div>
+      <nav className={classes.Nav}>
+        <ul>
+          <li>
+            <NavLink to="/admin/" activeClassName={classes.Active}>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/admin/new-match" activeClassName={classes.Active}>
+              New match
+            </NavLink>
+          </li>
+          {ctx.isAdmin && ctx.token && (
+            <li
+              onClick={() => {
+                ctx.logout();
+              }}
+            >
+              Logout
             </li>
-            <li>
-              {ctx.isAdmin && ctx.token && (
-                <NavLink to="/admin/new-match" activeClassName={classes.Active}>
-                  New match
-                </NavLink>
-              )}
-            </li>
-            {ctx.isAdmin && ctx.token && (
-              <li
-                onClick={() => {
-                  ctx.logout();
-                }}
-              >
-                Logout
-              </li>
-            )}
-          </ul>
-        </nav>
-      </header>
-      <div>{props.children}</div>
-    </>
+          )}
+        </ul>
+      </nav>
+    </header>
   );
 };
 
