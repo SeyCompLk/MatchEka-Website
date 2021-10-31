@@ -10,60 +10,49 @@ import AdminLayout from './components/UI/AdminLayout';
 import AdminHome from './pages/Admin/Home';
 import AdminSingleMatch from './pages/Admin/SingleMatch';
 import { authContext } from './context/authContext';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Redirect, useLocation } from 'react-router-dom';
 import './App.css';
 
 function App() {
   const ctx = useContext(authContext);
+  const router = useLocation();
   console.log(ctx.token);
   return (
-    <Switch>
-      <Route path="/" exact>
-        <NavBar imgSrc={PRImg}>
-          <Home />
-        </NavBar>
-      </Route>
-      <Route path="/leaderboard">
-        <NavBar imgSrc={PRImg}>
-          <Leaderboard />
-        </NavBar>
-      </Route>
-      <Route path="/chat/:matchId">
-        <NavBar imgSrc={PRImg}>
-          <Chat />
-        </NavBar>
-      </Route>
+    <>
       <Route path="/user/login">
-        <UserLogin isAdmin={false} />
+        {ctx.token === null ? <UserLogin /> : <Redirect to="/" />}
       </Route>
       <Route path="/user/register">
-        <UserRegister isAdmin={false} />
+        {ctx.token === null ? <UserRegister /> : <Redirect to="/" />}
       </Route>
-      <Route path="/admin" exact>
-        {ctx.token ? (
-          <AdminLayout>
+      <Route path="/admin">
+        <AdminLayout>
+          <Route path="/" exact>
             <AdminHome />
-          </AdminLayout>
-        ) : (
-          <Redirect to="/admin/login" />
-        )}
-      </Route>
-      <Route path="/admin/login">
-        <UserLogin isAdmin={true} />
-      </Route>
-      <Route path="/admin/register">
-        <UserRegister isAdmin={true} />
-      </Route>
-      <Route path="/admin/matches/:matchId" exact>
-        {ctx.token ? (
-          <AdminLayout>
+          </Route>
+          <Route path="/matches/:matchId">
             <AdminSingleMatch />
-          </AdminLayout>
-        ) : (
-          <Redirect to="/admin/login" />
-        )}
+          </Route>
+        </AdminLayout>
       </Route>
-    </Switch>
+      {!(
+        router.pathname === '/user/login' ||
+        router.pathname === '/user/register' ||
+        router.pathname.startsWith('/admin')
+      ) && (
+        <NavBar imgSrc={PRImg}>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/leaderboard" exact>
+            <Leaderboard />
+          </Route>
+          <Route path="/chat/:matchId">
+            <Chat />
+          </Route>
+        </NavBar>
+      )}
+    </>
   );
 }
 
