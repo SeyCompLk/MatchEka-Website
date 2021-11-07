@@ -8,3 +8,7 @@
     @apply px-5 hover:text-blue-600 text-lg;
   }
 }
+
+body {
+  overflow-y: hidden;
+}

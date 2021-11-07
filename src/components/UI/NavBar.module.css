@@ -1,9 +1,129 @@
-.Navigator {
-  cursor: pointer;
-  transition: 0.3s color ease-out;
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px 30px;
+  height: 13vh;
 }
-.Navigator:hover,
-.Navigator:active,
-.Active {
-  color: rgba(139, 139, 139, 0.973);
+
+.Hamburger {
+  width: 40px;
+  display: none;
+}
+
+.HamHelper {
+  display: none;
+}
+
+.Hamburger .Bar {
+  width: 100%;
+  height: 7px;
+  background-color: black;
+  border-radius: 100px;
+  margin-bottom: 5px;
+}
+
+.Brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Brand img {
+  width: 60px;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.Brand span {
+  font-size: 2rem;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.DoNotShow {
+  display: block;
+}
+
+.Nav ul {
+  list-style: none;
+}
+
+.Nav ul li {
+  display: inline-flex;
+  margin-right: 20px;
+}
+
+.Nav a {
+  color: #3e3e3e;
+  transition: 0.2s color ease-out;
+  font-weight: 500;
+}
+
+.Nav a:hover,
+.Nav a:active,
+a.Active {
+  color: #797979;
+}
+
+@media (max-width: 768px) {
+  .Nav {
+    position: absolute;
+    top: 13vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    width: 100%;
+    height: 87vh;
+    z-index: 1000;
+  }
+  .DoNotShow {
+    display: none;
+  }
+  .Nav ul li {
+    display: block;
+    text-align: center;
+    font-size: 1.3rem;
+    width: 100%;
+    padding: 6vh 0px;
+    border-bottom: 1px solid black;
+  }
+  .Nav ul li:last-child {
+    border-bottom: none;
+  }
+  .Hamburger {
+    display: block;
+  }
+  .HamHelper {
+    display: block;
+  }
+  .Brand {
+    flex-direction: row-reverse;
+  }
+}
+
+@media (max-width: 425px) {
+  .Brand span {
+    font-size: 1.5rem;
+  }
+  .Brand img {
+    width: 40px;
+    margin-right: 0;
+    margin-left: 8px;
+  }
+  .Hamburger {
+    width: 30px;
+  }
+  .Header {
+    padding: 0px 15px;
+  }
+  .Hamburger .Bar {
+    height: 5px;
+  }
+  .HamHelper {
+    display: none;
+  }
 }
