@@ -86,7 +86,6 @@ const NavBar = ({ imgSrc, children }: Props) => {
         style={{
           width: '100%',
           height: '87vh',
-          overflowY: clicked ? 'hidden' : 'scroll',
         }}
       >
         {children}

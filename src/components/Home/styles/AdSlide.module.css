@@ -1,0 +1,10 @@
+.Box {
+  height: 37vh;
+  width: 100%;
+  background: url(https://i.ytimg.com/vi/OWaqPiFJsxM/maxresdefault.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  box-shadow: 5px 5px 22px -5px rgba(0, 0, 0, 0.23);
+}

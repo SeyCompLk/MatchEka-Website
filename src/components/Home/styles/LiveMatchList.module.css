@@ -1,0 +1,47 @@
+.Box {
+  height: 37vh;
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 22px -5px rgba(0, 0, 0, 0.23);
+  padding: 15px;
+}
+
+.UpperText {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.UpperText .Container1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.UpperText .Container1,
+.UpperText .Container2 {
+  width: max-content;
+}
+
+.UpperText .Circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgb(255, 75, 75);
+  margin-right: 10px;
+}
+
+.UpperText .Topic {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #3f3f3f;
+}
+
+.UpperText .SubTopic {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #3f3f3f;
+}

@@ -7,11 +7,16 @@ import {
   RefObject,
 } from 'react';
 
-export interface versusTileProps {
-  team1: string;
-  team2: string;
-  team1Image: string;
-  team2Image: string;
+export interface UpcomingCardProps {
+  team1: {
+    title: string;
+    flag: string;
+  };
+  id: string;
+  team2: {
+    title: string;
+    flag: string;
+  };
   date: string;
   time: string;
 }
@@ -134,6 +139,7 @@ interface InningData {
   wickets: number;
   totalScore: number;
   bowls: number;
+  inning: number;
 }
 
 export interface ScoreBoardResponse {
