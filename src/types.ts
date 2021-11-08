@@ -77,8 +77,18 @@ export interface LeaderboardProps {
 }
 
 export interface MatchOverviewProps {
-  team1: string | undefined;
-  team2: string | undefined;
+  team1:
+    | {
+        name: string;
+        flag: string;
+      }
+    | undefined;
+  team2:
+    | {
+        name: string;
+        flag: string;
+      }
+    | undefined;
   inning: number | undefined;
   score: number | undefined;
   wickets: number | undefined;
@@ -105,6 +115,7 @@ export interface MatchOverviewProps {
         wickets: number;
       }
     | undefined;
+  toss: string;
 }
 
 interface Player {

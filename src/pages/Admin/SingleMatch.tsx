@@ -30,18 +30,18 @@ const SingleMatch = () => {
     return { score, wickets, overs, bowls };
   };
 
-  const overview: MatchOverviewProps = {
-    team1: fullData?.teams.team1.country,
-    team2: fullData?.teams.team2.country,
-    inning: fullData?.scoreBoard.inning,
-    score: getMatchData().score,
-    wickets: getMatchData().wickets,
-    overs: getMatchData().overs,
-    bowls: getMatchData().bowls,
-    currStriker: fullData?.scoreBoard.batsman.striker,
-    nonStriker: fullData?.scoreBoard.batsman.nonStriker,
-    currBowler: fullData?.scoreBoard.currBowler,
-  };
+  // const overview: MatchOverviewProps = {
+  //   team1: fullData?.teams.team1.country,
+  //   team2: fullData?.teams.team2.country,
+  //   inning: fullData?.scoreBoard.inning,
+  //   score: getMatchData().score,
+  //   wickets: getMatchData().wickets,
+  //   overs: getMatchData().overs,
+  //   bowls: getMatchData().bowls,
+  //   currStriker: fullData?.scoreBoard.batsman.striker,
+  //   nonStriker: fullData?.scoreBoard.batsman.nonStriker,
+  //   currBowler: fullData?.scoreBoard.currBowler,
+  // };
 
   const { search } = useLocation();
   const query = new URLSearchParams(search);
@@ -66,7 +66,7 @@ const SingleMatch = () => {
   // 6171734c303f363e5a14c05d
   // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNoYWt5YWltYW5qaXRoMzJAZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjM0ODIzNTc4LCJleHAiOjE2MzQ5OTYzNzh9.0OyJNjs7NDfYlK8DugnTMQAzlIOhIQuuzZNLnWoMH0s
 
-  console.log(overview);
+  // console.log(overview);
   useEffect(() => {
     fetchData();
   }, [fetchData]);
@@ -84,8 +84,14 @@ const SingleMatch = () => {
             <div>Toss</div>
           ) : (
             <Overview
-              team1="Sri Lanka"
-              team2="South Africa"
+              team1={{
+                name: 'Sri Lanka',
+                flag: '',
+              }}
+              team2={{
+                name: 'Sri Lanka',
+                flag: '',
+              }}
               inning={1}
               score={50}
               wickets={5}
@@ -94,6 +100,7 @@ const SingleMatch = () => {
               currStriker={{ name: 'Shakya', score: 25, bowls: 32 }}
               nonStriker={{ name: 'Shakya', score: 25, bowls: 32 }}
               currBowler={{ name: 'Sakithma', overs: 10, wickets: 3 }}
+              toss="Sri Lanka"
             />
           )}
         </>

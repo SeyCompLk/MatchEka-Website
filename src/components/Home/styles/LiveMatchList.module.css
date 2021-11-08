@@ -45,3 +45,128 @@
   font-weight: 300;
   color: #3f3f3f;
 }
+
+.Card {
+  background-color: #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px 20px;
+  width: 80%;
+  border-radius: 10px;
+}
+
+.Card .TeamRow,
+.Card .ScoreRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.Card .TeamRow .Team1,
+.Card .TeamRow .Team2,
+.Card .TeamRow .RunRate {
+  width: 33%;
+}
+
+.Card .TeamRow .Team1,
+.Card .TeamRow .Team2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Card .TeamRow {
+  font-family: 'Roboto', sans-serif;
+  color: #3f3f3f;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.Card .TeamRow .LightText {
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+
+.Card .TeamRow img {
+  width: auto;
+  height: 50px;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.Card .ScoreRow {
+  font-family: 'Roboto', sans-serif;
+  color: #3f3f3f;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.Card .ScoreRow .LightText {
+  font-family: 'Roboto', sans-serif;
+  color: #3f3f3f;
+  font-weight: 300;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.Card .ScoreRow .Bowler {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 300;
+  width: 25%;
+}
+
+.Card .ScoreRow .Player {
+  width: 25%;
+}
+
+.Card .ScoreRow .Bat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: 300;
+}
+
+.Card .ScoreRow .Over {
+  width: 45.33%;
+}
+
+.Card .ScoreRow .ButtonContainer {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px auto;
+}
+
+.Card .ScoreRow .ButtonContainer .Button {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #1a334a;
+  color: white;
+  border-radius: 100px;
+  padding: 10px 15px;
+}
+
+.Slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.Slider .Arrow {
+  color: #3f3f3f;
+  cursor: pointer;
+  font-size: 1rem;
+}
