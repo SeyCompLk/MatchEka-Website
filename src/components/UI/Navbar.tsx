@@ -19,17 +19,32 @@ const NavBar = ({ imgSrc, children }: Props) => {
           onClick={() => {
             setClicked((curr) => !curr);
           }}
+          style={{
+            flexDirection: clicked ? 'column' : 'row',
+            height: clicked ? '7vh' : 'auto',
+            transition: '0.3s all ease',
+          }}
         >
           <div className={classes.Bar}></div>
           <div className={classes.Bar}></div>
           <div className={classes.Bar}></div>
         </div>
-        <NavLink className={classes.Brand} to="/">
+        <NavLink
+          className={`${classes.Brand} && ${clicked && classes.DoNotShow}`}
+          to="/"
+        >
           <img src={imgSrc} alt="Logo" />
           <span>Match Eka</span>
         </NavLink>
+        {clicked && <div className={classes.Overlay}></div>}
         <nav className={`${classes.Nav} && ${!clicked && classes.DoNotShow}`}>
           <ul>
+            {clicked && (
+              <NavLink className={classes.Brand2} to="/">
+                <img src={imgSrc} alt="Logo" />
+                <span>Match Eka</span>
+              </NavLink>
+            )}
             <li>
               <NavLink to="/rewards" activeClassName={classes.Active}>
                 Rewards

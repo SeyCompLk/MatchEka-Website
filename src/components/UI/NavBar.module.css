@@ -10,6 +10,7 @@
 .Hamburger {
   width: 40px;
   display: none;
+  z-index: 600;
 }
 
 .HamHelper {
@@ -17,17 +18,27 @@
 }
 
 .Hamburger .Bar {
-  width: 100%;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   background-color: black;
-  border-radius: 100px;
-  margin-bottom: 5px;
+  border-radius: 50%;
 }
 
 .Brand {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.Brand2 {
+  flex-direction: column;
+}
+
+.Brand2 img {
+  width: 50%;
+  height: auto;
+  margin: auto;
+  border-radius: 10px;
 }
 
 .Brand img {
@@ -37,13 +48,22 @@
   margin-right: 10px;
 }
 
-.Brand span {
+.Brand span,
+.Brand2 span {
   font-size: 2rem;
   color: black;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
 }
 
+.Brand2 span {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.Brand2 {
+  display: none;
+}
 .DoNotShow {
   display: block;
 }
@@ -69,59 +89,91 @@ a.Active {
   color: #797979;
 }
 
+.Overlay {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.623);
+  z-index: 500;
+}
+
 @media (max-width: 768px) {
   .Nav {
     position: absolute;
-    top: 13vh;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: white;
-    width: 100%;
-    height: 87vh;
+    top: 0;
+    left: 0%;
+    background-color: rgba(0, 0, 0, 0.815);
+    width: 50%;
+    height: 100vh;
     z-index: 1000;
+    padding: 6vh 10px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  .Brand2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6vh;
+  }
+  .Overlay {
+    display: block;
   }
   .DoNotShow {
     display: none;
   }
+  .Nav a {
+    color: #ffffff;
+    transition: 0.2s color ease-out;
+    font-weight: 500;
+  }
+
+  .Nav a:hover,
+  .Nav a:active,
+  a.Active {
+    color: #8f8f8f;
+  }
   .Nav ul li {
     display: block;
-    text-align: center;
+    text-align: left;
     font-size: 1.3rem;
     width: 100%;
-    padding: 6vh 0px;
-    border-bottom: 1px solid black;
+    color: white;
+    margin-top: 15px;
   }
-  .Nav ul li:last-child {
-    border-bottom: none;
+  .Nav ul li:first-child {
+    margin-top: none;
   }
   .Hamburger {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  .HamHelper {
-    display: block;
-  }
-  .Brand {
+  .Header {
     flex-direction: row-reverse;
   }
 }
 
 @media (max-width: 425px) {
+  .Nav ul li {
+    font-size: 1rem;
+  }
   .Brand span {
     font-size: 1.5rem;
   }
   .Brand img {
-    width: 40px;
-    margin-right: 0;
-    margin-left: 8px;
+    width: 45px;
+    margin-right: 8px;
   }
   .Hamburger {
     width: 30px;
   }
   .Header {
     padding: 0px 15px;
-  }
-  .Hamburger .Bar {
-    height: 5px;
   }
   .HamHelper {
     display: none;
