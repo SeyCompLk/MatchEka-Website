@@ -36,7 +36,14 @@ const NavBar = ({ imgSrc, children }: Props) => {
           <img src={imgSrc} alt="Logo" />
           <span>Match Eka</span>
         </NavLink>
-        {clicked && <div className={classes.Overlay}></div>}
+        {clicked && (
+          <div
+            className={classes.Overlay}
+            onClick={() => {
+              setClicked((curr) => !curr);
+            }}
+          ></div>
+        )}
         <nav className={`${classes.Nav} && ${!clicked && classes.DoNotShow}`}>
           <ul>
             {clicked && (
