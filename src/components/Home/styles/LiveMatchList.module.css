@@ -173,3 +173,10 @@
   cursor: pointer;
   font-size: 1rem;
 }
+
+@media (max-width: 1168px) {
+  .Box {
+    height: auto;
+    width: 100%;
+  }
+}

@@ -38,9 +38,14 @@ const Home: React.FC = () => {
     <div className={classes.Container}>
       <div className={classes.LeftContainer}>
         <UpcomingMatches />
+        <div className={classes.LeftAdvertisement}>
+          <AdSlide />
+        </div>
       </div>
       <div className={classes.RightContainer}>
-        <AdSlide />
+        <div className={classes.RightAdvertisement}>
+          <AdSlide />
+        </div>
         <LiveMatchList />
       </div>
     </div>

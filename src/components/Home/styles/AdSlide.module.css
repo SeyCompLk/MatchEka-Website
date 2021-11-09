@@ -8,3 +8,8 @@
   border-radius: 10px;
   box-shadow: 5px 5px 22px -5px rgba(0, 0, 0, 0.23);
 }
+@media (max-width: 1168px) {
+  .Box {
+    height: 55vh;
+  }
+}

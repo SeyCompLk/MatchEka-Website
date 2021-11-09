@@ -99,3 +99,10 @@
 .Box::-webkit-scrollbar-thumb:hover {
   background: rgb(141, 141, 141);
 }
+
+@media (max-width: 1168px) {
+  .Box {
+    height: 55vh;
+    width: 47%;
+  }
+}
