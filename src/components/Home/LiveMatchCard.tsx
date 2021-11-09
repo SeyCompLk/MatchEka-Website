@@ -28,7 +28,12 @@ const LiveMatchCard = (props: MatchOverviewProps) => {
           </p>
         </div>
         <div className={classes.Team2}>
-          <div>Yet to bat</div>
+          <div>
+            <p>Yet to bat</p>
+            <p style={{ opacity: 0 }} className={classes.LightText}>
+              00
+            </p>
+          </div>
           <div>
             <img src={props.team2?.flag} alt={props.team2?.name} />
             <div className={classes.LightText}>{props.team2?.name}</div>
@@ -44,28 +49,23 @@ const LiveMatchCard = (props: MatchOverviewProps) => {
             <p>{props.nonStriker?.name}</p> <p>{props.nonStriker?.score}</p>
           </div>
         </div>
-        <div className={classes.Over}>
-          <p className={classes.LightText} style={{ textAlign: 'center' }}>
-            This Over:
-          </p>
-          Over
-          <div className={classes.ButtonContainer}>
-            <Link to="/matches/chat?match=1" className={classes.Button}>
-              <ChatIcon />
-              <span>Chat</span>
-            </Link>
-            <Link to="/matches/myteam?match=1" className={classes.Button}>
-              <GroupIcon />
-              <span>My Team</span>
-            </Link>
-          </div>
-        </div>
+        <div className={classes.Over}></div>
         <div className={classes.Bowler}>
           <p>{props.currBowler?.name}</p>
           <p>
             {props.currBowler?.overs}-{props.currBowler?.wickets}
           </p>
         </div>
+      </div>
+      <div className={classes.ButtonContainer}>
+        <Link to="/matches/chat?match=1" className={classes.Button}>
+          <ChatIcon />
+          <span>Chat</span>
+        </Link>
+        <Link to="/matches/myteam?match=1" className={classes.Button}>
+          <GroupIcon />
+          <span>My Team</span>
+        </Link>
       </div>
     </div>
   );
