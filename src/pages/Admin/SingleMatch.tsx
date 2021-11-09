@@ -30,18 +30,23 @@ const SingleMatch = () => {
     return { score, wickets, overs, bowls };
   };
 
-  // const overview: MatchOverviewProps = {
-  //   team1: fullData?.teams.team1.country,
-  //   team2: fullData?.teams.team2.country,
-  //   inning: fullData?.scoreBoard.inning,
-  //   score: getMatchData().score,
-  //   wickets: getMatchData().wickets,
-  //   overs: getMatchData().overs,
-  //   bowls: getMatchData().bowls,
-  //   currStriker: fullData?.scoreBoard.batsman.striker,
-  //   nonStriker: fullData?.scoreBoard.batsman.nonStriker,
-  //   currBowler: fullData?.scoreBoard.currBowler,
-  // };
+  const overview: MatchOverviewProps = {
+    team1: { name: 'Sri Lanka', flag: '' },
+    team2: { name: 'Sri Lanka', flag: '' },
+    inning: fullData?.scoreBoard.inning,
+    score: getMatchData().score,
+    wickets: getMatchData().wickets,
+    overs: getMatchData().overs,
+    bowls: getMatchData().bowls,
+    currStriker: fullData?.scoreBoard.batsman.striker,
+    nonStriker: fullData?.scoreBoard.batsman.nonStriker,
+    currBowler: fullData?.scoreBoard.currBowler,
+    toss: 'Sri Lanka',
+  };
+
+  console.log(overview);
+
+  console.log('Overview');
 
   const { search } = useLocation();
   const query = new URLSearchParams(search);

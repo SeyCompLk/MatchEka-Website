@@ -1,5 +1,5 @@
 import React from 'react';
-import { upcomingMatchProps } from '../../types';
+// import { upcomingMatchProps } from '../../types';
 import classes from './styles/UpcomingMatchList.module.css';
 import UpcomingMatchCard from './UpcomingMatchCard';
 import SAF from '../../assets/images/SA.jpg';

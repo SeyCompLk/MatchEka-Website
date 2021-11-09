@@ -15,7 +15,7 @@ const Home: React.FC = () => {
     setMatches(data);
   };
   const [isLive, setIsLive] = useState<boolean>(true);
-
+  console.log(upcomingMatches);
   useEffect(() => {
     try {
       fetchData();
