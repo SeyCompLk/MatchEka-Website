@@ -106,3 +106,56 @@
     width: 47%;
   }
 }
+
+@media (max-width: 768px) {
+  .Box {
+    width: 100%;
+    margin: auto;
+    height: 43vh;
+  }
+  .TopText .Heading,
+  .TopText .SubHeading {
+    text-align: center;
+  }
+  .TopText .Heading {
+    color: #3f3f3f;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 425px) {
+  .TopText .Heading {
+    font-size: 0.8rem;
+  }
+  .TopText .SubHeading {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .Card .Teams {
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+  }
+  .Card .Teams > div {
+    width: 100%;
+  }
+  .VS {
+    text-align: center;
+    width: 100%;
+  }
+  .Card .Teams img {
+    margin: auto;
+    width: 30px;
+    height: 30px;
+  }
+  .Box::-webkit-scrollbar {
+    width: 5px;
+  }
+  .Card .Date {
+    width: 50%;
+  }
+}

@@ -110,6 +110,14 @@ const LiveMatchList: React.FC = () => {
           <SkipNextIcon />
         </span>
       </div>
+      <div className={classes.MobileSlider}>
+        <span className={classes.Arrow} onClick={decreaseIndex}>
+          <SkipPreviousIcon />
+        </span>
+        <span className={classes.Arrow} onClick={increaseIndex}>
+          <SkipNextIcon />
+        </span>
+      </div>
     </div>
   );
 };

@@ -33,6 +33,17 @@
   height: 37vh;
   width: 100%;
 }
+.MobileAd {
+  display: none;
+}
+
+.Hidden {
+  display: none;
+}
+
+.Paginator {
+  display: none;
+}
 
 @media (max-width: 1168px) {
   .Container {
@@ -50,6 +61,17 @@
     align-items: center;
     flex-direction: row-reverse;
     margin-bottom: 20px;
+  }
+
+  .Paginator {
+    display: none;
+    width: 50%;
+    font-family: 'Roboto', sans-serif;
+    color: #3f3f3f;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    margin: 20px auto;
   }
 
   .RightAdvertisement {
@@ -88,5 +110,35 @@
 
   .Container::-webkit-scrollbar-thumb:hover {
     background: rgb(141, 141, 141);
+  }
+}
+
+@media (max-width: 768px) {
+  .LeftAdvertisement {
+    display: none;
+  }
+  .LeftContainer {
+    display: none;
+  }
+  .Hidden {
+    display: block;
+  }
+  .MobileAd {
+    display: block;
+    width: 100%;
+    height: 25vh;
+  }
+  .Paginator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .LeftContainer {
+    height: auto;
+    margin-bottom: 0;
+  }
+  .RightContainer {
+    height: auto;
+    margin-bottom: 0;
   }
 }

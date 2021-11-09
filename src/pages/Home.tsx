@@ -15,17 +15,6 @@ const Home: React.FC = () => {
     setMatches(data);
   };
   const [isLive, setIsLive] = useState<boolean>(true);
-  const [btnColors, setButtonColors] = useState<Array<string>>([
-    'lightblue',
-    'white',
-  ]);
-
-  const toogleBtn = () => {
-    setIsLive(!isLive);
-    setButtonColors(['white', btnColors[0]]);
-    const btn = document.getElementById('lu-btn');
-    btn?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   useEffect(() => {
     try {
@@ -36,17 +25,48 @@ const Home: React.FC = () => {
   }, []);
   return (
     <div className={classes.Container}>
+      {!isLive && (
+        <div className={`${classes.LeftContainer} ${classes.Hidden}`}>
+          <UpcomingMatches />
+          <div className={classes.LeftAdvertisement}>
+            <AdSlide />
+          </div>
+        </div>
+      )}
       <div className={classes.LeftContainer}>
         <UpcomingMatches />
         <div className={classes.LeftAdvertisement}>
           <AdSlide />
         </div>
       </div>
-      <div className={classes.RightContainer}>
-        <div className={classes.RightAdvertisement}>
-          <AdSlide />
+
+      {isLive && (
+        <div className={classes.RightContainer}>
+          <div className={classes.RightAdvertisement}>
+            <AdSlide />
+          </div>
+          <LiveMatchList />
         </div>
-        <LiveMatchList />
+      )}
+      <div className={classes.Paginator}>
+        <span
+          onClick={() => {
+            setIsLive(true);
+          }}
+        >
+          Live
+        </span>
+        <span>|</span>
+        <span
+          onClick={() => {
+            setIsLive(false);
+          }}
+        >
+          Upcoming
+        </span>
+      </div>
+      <div className={classes.MobileAd}>
+        <AdSlide />
       </div>
     </div>
   );

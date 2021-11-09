@@ -13,3 +13,9 @@
     height: 55vh;
   }
 }
+
+@media (max-width: 768px) {
+  .Box {
+    height: 25vh;
+  }
+}

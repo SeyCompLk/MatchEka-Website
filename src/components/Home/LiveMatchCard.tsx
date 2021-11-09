@@ -42,6 +42,7 @@ const LiveMatchCard = (props: MatchOverviewProps) => {
       </div>
       <div className={classes.ScoreRow}>
         <div className={classes.Player}>
+          <div className={classes.Annotation}>Batting</div>
           <div className={classes.Bat}>
             <p>{props.currStriker?.name}</p> <p>{props.currStriker?.score}</p>
           </div>
@@ -49,12 +50,14 @@ const LiveMatchCard = (props: MatchOverviewProps) => {
             <p>{props.nonStriker?.name}</p> <p>{props.nonStriker?.score}</p>
           </div>
         </div>
-        <div className={classes.Over}></div>
-        <div className={classes.Bowler}>
-          <p>{props.currBowler?.name}</p>
-          <p>
-            {props.currBowler?.overs}-{props.currBowler?.wickets}
-          </p>
+        <div className={classes.Player}>
+          <div className={classes.Annotation}>Batting</div>
+          <div className={classes.Bowler}>
+            <p>{props.currBowler?.name}</p>
+            <p>
+              {props.currBowler?.overs}-{props.currBowler?.wickets}
+            </p>
+          </div>
         </div>
       </div>
       <div className={classes.ButtonContainer}>

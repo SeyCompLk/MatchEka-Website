@@ -11,7 +11,7 @@ const UpcomingMatchCard = (props: UpcomingCardProps) => {
           <img src={props.team1.flag} alt={props.team1.title} />
           <p className={classes.Name}>{props.team1.title}</p>
         </div>
-        <p>VS</p>
+        <p className={classes.VS}>VS</p>
         <div>
           <img src={props.team2.flag} alt={props.team2.title} />
           <p className={classes.Name}>{props.team2.title}</p>
