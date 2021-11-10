@@ -9,14 +9,19 @@ afterAll(() => {
 
 describe('Intergration tests of /login', () => {
   test('Should match snapshot', () => {
-    const LoginPage = render(<Login />, { wrapper: MemoryRouter });
+    const LoginPage = render(<Login isAdmin={false} />, {
+      wrapper: MemoryRouter,
+    });
     expect(LoginPage).toMatchSnapshot();
   });
 
   test('Should show an error when email is invalid after typing', () => {
-    const { queryByPlaceholderText, queryByText } = render(<Login />, {
-      wrapper: MemoryRouter,
-    });
+    const { queryByPlaceholderText, queryByText } = render(
+      <Login isAdmin={false} />,
+      {
+        wrapper: MemoryRouter,
+      }
+    );
     const emailInput = queryByPlaceholderText('Enter your email') as Element;
     expect(queryByText('Enter a valid email address')).not.toBeInTheDocument();
     fireEvent.change(emailInput, {
@@ -30,9 +35,12 @@ describe('Intergration tests of /login', () => {
   });
 
   test('Should show an error when password is invalid after typing', () => {
-    const { queryByPlaceholderText, queryByText } = render(<Login />, {
-      wrapper: MemoryRouter,
-    });
+    const { queryByPlaceholderText, queryByText } = render(
+      <Login isAdmin={false} />,
+      {
+        wrapper: MemoryRouter,
+      }
+    );
     const pwdInput = queryByPlaceholderText('Enter your password') as Element;
     expect(queryByText('Enter a valid password')).not.toBeInTheDocument();
     fireEvent.change(pwdInput, {
@@ -46,7 +54,7 @@ describe('Intergration tests of /login', () => {
   });
 
   test('Should show an error in email if button is clicked without entering a single char', () => {
-    const { queryByRole, queryByText } = render(<Login />, {
+    const { queryByRole, queryByText } = render(<Login isAdmin={false} />, {
       wrapper: MemoryRouter,
     });
     const button = queryByRole('button') as Element;
