@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import LiveMatchCard from './LiveMatchCard';
-
+import { SwipeEventListener } from 'swipe-event-listener';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import SLF from '../../assets/images/SL.jpg';
@@ -88,8 +88,15 @@ const LiveMatchList: React.FC = () => {
       setIndex(index - 1);
     }
   };
+  const { swipeArea } = SwipeEventListener({
+    swipeArea: document.getElementById('box'),
+  });
+
+  swipeArea.addEventListener('swipeLeft', decreaseIndex);
+  swipeArea.addEventListener('swipeRight', increaseIndex);
+
   return (
-    <div className={classes.Box}>
+    <div className={classes.Box} id="box">
       <div className={classes.UpperText}>
         <div className={classes.Container1}>
           <div className={classes.Circle}></div>
@@ -106,14 +113,6 @@ const LiveMatchList: React.FC = () => {
           <SkipPreviousIcon />
         </span>
         <LiveMatchCard {...props[index]} />
-        <span className={classes.Arrow} onClick={increaseIndex}>
-          <SkipNextIcon />
-        </span>
-      </div>
-      <div className={classes.MobileSlider}>
-        <span className={classes.Arrow} onClick={decreaseIndex}>
-          <SkipPreviousIcon />
-        </span>
         <span className={classes.Arrow} onClick={increaseIndex}>
           <SkipNextIcon />
         </span>
