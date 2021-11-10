@@ -1,6 +1,8 @@
 import React from 'react';
 import { render, fireEvent, cleanup } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
+import { MemoryRouter } from 'react-router-dom';
+
 import Home from '../../pages/Home';
 
 afterAll(() => {
@@ -22,7 +24,7 @@ describe('User interaction tests in mobile version', () => {
     resizeWindow(414, 736);
   });
   test('Should toggle between live and upcoming matches when buntton clicked', () => {
-    const { queryByTestId } = render(<Home />);
+    const { queryByTestId } = render(<Home />, { wrapper: MemoryRouter });
 
     expect(queryByTestId('resp-live-tile')).toBeInTheDocument();
     expect(queryByTestId('resp-upcoming-tile')).not.toBeInTheDocument();
