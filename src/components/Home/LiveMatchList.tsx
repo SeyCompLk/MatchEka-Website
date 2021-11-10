@@ -89,7 +89,7 @@ const LiveMatchList: React.FC = () => {
     }
   };
   const { swipeArea } = SwipeEventListener({
-    swipeArea: document.getElementById('box'),
+    swipeArea: document.getElementById('box')!,
   });
 
   swipeArea.addEventListener('swipeLeft', decreaseIndex);
