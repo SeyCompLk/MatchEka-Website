@@ -1,0 +1,161 @@
+.Box {
+  height: 80vh;
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  padding: 25px 15px;
+  box-shadow: 5px 5px 22px -5px rgba(0, 0, 0, 0.23);
+}
+
+.TopText .Note {
+  color: #3f3f3f;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 300;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.TopText .Heading {
+  color: #3f3f3f;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.TopText .SubHeading {
+  color: #3f3f3f;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.Card {
+  width: 100%;
+  margin: 20px auto;
+  background-color: #f3f3f3;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.Card .Teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+}
+.Card .Date {
+  width: 40%;
+}
+.Card .Teams img {
+  width: auto;
+  height: 30px;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.Card .Teams p {
+  font-family: 'Roboto', sans-serif;
+  color: #3f3f3f;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.Card .Teams p.Name {
+  font-family: 'Roboto', sans-serif;
+  color: #3f3f3f;
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+
+.Card .Date p {
+  font-family: 'Roboto', sans-serif;
+  color: #3f3f3f;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+.Box::-webkit-scrollbar {
+  width: 10px;
+  height: 30px;
+}
+.Box::-webkit-scrollbar-track {
+  display: none;
+}
+
+.Box::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.363);
+  transition: 1s all ease;
+  border-radius: 30px;
+}
+
+.Box::-webkit-scrollbar-thumb:hover {
+  background: rgb(141, 141, 141);
+}
+
+@media (max-width: 1168px) {
+  .Box {
+    height: 55vh;
+    width: 47%;
+  }
+}
+
+@media (max-width: 768px) {
+  .Box {
+    width: 100%;
+    margin: auto;
+    height: 43vh;
+  }
+  .TopText .Heading,
+  .TopText .SubHeading {
+    text-align: center;
+  }
+  .TopText .Heading {
+    color: #3f3f3f;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 425px) {
+  .TopText .Heading {
+    font-size: 0.8rem;
+  }
+  .TopText .SubHeading {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .Card .Teams {
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+  }
+  .Card .Teams > div {
+    width: 100%;
+  }
+  .VS {
+    text-align: center;
+    width: 100%;
+  }
+  .Card .Teams img {
+    margin: auto;
+    width: 30px;
+    height: 30px;
+  }
+  .Box::-webkit-scrollbar {
+    width: 5px;
+  }
+  .Card .Date {
+    width: 50%;
+  }
+}

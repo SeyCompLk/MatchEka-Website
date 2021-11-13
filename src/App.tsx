@@ -6,6 +6,7 @@ import UserLogin from './pages/Login';
 import UserRegister from './pages/SignUp';
 import Leaderboard from './pages/Leaderboard';
 import Chat from './pages/Chat';
+import Rewards from './pages/Rewards';
 import AdminLayout from './components/UI/AdminLayout';
 import AdminHome from './pages/Admin/Home';
 import AdminSingleMatch from './pages/Admin/SingleMatch';
@@ -32,6 +33,9 @@ function App() {
         <NavBar imgSrc={PRImg}>
           <Chat />
         </NavBar>
+      </Route>
+      <Route path="/rewards">
+        <Rewards />
       </Route>
       <Route path="/user/login">
         <UserLogin isAdmin={false} />
