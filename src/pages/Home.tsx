@@ -26,7 +26,10 @@ const Home: React.FC = () => {
   return (
     <div className={classes.Container}>
       {!isLive && (
-        <div className={`${classes.LeftContainer} ${classes.Hidden}`}>
+        <div
+          className={`${classes.LeftContainer} ${classes.Hidden}`}
+          data-testid="resp-upcoming-tile"
+        >
           <UpcomingMatches />
           <div className={classes.LeftAdvertisement}>
             <AdSlide />
@@ -41,7 +44,7 @@ const Home: React.FC = () => {
       </div>
 
       {isLive && (
-        <div className={classes.RightContainer}>
+        <div className={classes.RightContainer} data-testid="resp-live-tile">
           <div className={classes.RightAdvertisement}>
             <AdSlide />
           </div>
@@ -58,6 +61,7 @@ const Home: React.FC = () => {
         </span>
         <span>|</span>
         <span
+          data-testid="upcoming-btn"
           onClick={() => {
             setIsLive(false);
           }}

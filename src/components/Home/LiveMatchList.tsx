@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import LiveMatchCard from './LiveMatchCard';
-import { SwipeEventListener } from 'swipe-event-listener';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import SLF from '../../assets/images/SL.jpg';
@@ -74,6 +73,7 @@ const props = [
 
 const LiveMatchList: React.FC = () => {
   const [index, setIndex] = useState(0);
+
   const increaseIndex = () => {
     if (index === props.length - 1) {
       setIndex(0);
@@ -88,15 +88,10 @@ const LiveMatchList: React.FC = () => {
       setIndex(index - 1);
     }
   };
-  const { swipeArea } = SwipeEventListener({
-    swipeArea: document.getElementById('box')!,
-  });
-
-  swipeArea.addEventListener('swipeLeft', decreaseIndex);
-  swipeArea.addEventListener('swipeRight', increaseIndex);
+  const boxRef = useRef(null);
 
   return (
-    <div className={classes.Box} id="box">
+    <div className={classes.Box} ref={boxRef}>
       <div className={classes.UpperText}>
         <div className={classes.Container1}>
           <div className={classes.Circle}></div>
