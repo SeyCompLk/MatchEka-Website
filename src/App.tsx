@@ -35,7 +35,9 @@ function App() {
         </NavBar>
       </Route>
       <Route path="/rewards">
-        <Rewards />
+        <NavBar imgSrc={PRImg}>
+          <Rewards />
+        </NavBar>
       </Route>
       <Route path="/user/login">
         <UserLogin isAdmin={false} />
