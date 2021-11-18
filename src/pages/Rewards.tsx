@@ -22,7 +22,7 @@ const Rewards = () => {
         </div>
         <div className={classes.Methods}>
           <div className={classes.FirstContainer}>
-            <span className={classes.MethodHeading}>Method1</span>
+            <p className={classes.MethodHeading}>Method1</p>
             <p className={classes.MethodStep}>
               Click on any Upcoming Match and Select the 2 squads with 22
               players who you think will play the match.
@@ -46,17 +46,17 @@ const Rewards = () => {
           </div>
           <div className={classes.SecondContainer}>
             <div className={classes.MethodTwo}>
-              <span className={classes.MethodHeading}>Method2</span>
+              <p className={classes.MethodHeading}>Method2</p>
               <p className={classes.MethodStep}>
                 Vote to a Team while the match is Live.
               </p>
               <p className={classes.MethodStep}>
                 The Earlier you vote, the more points you get.
               </p>
-              <span className={classes.MethodHeading}>
+              <p className={classes.MethodHeading}>
                 Point Calculation = Number of players correctly guessed X 10 X
                 (Time match starts - Time now)
-              </span>
+              </p>
             </div>
             <img
               src={Image3}

@@ -75,3 +75,65 @@
 .SquadImage {
   width: 35%;
 }
+
+@media (max-width: 768px) {
+  .Body {
+    flex-direction: column-reverse;
+    height: 85vh;
+    width: 95%;
+    margin: auto;
+    justify-content: space-between;
+  }
+  .LeftBar,
+  .RightBar {
+    width: 100%;
+  }
+
+  .LeftBar {
+    height: 65vh;
+    overflow-y: scroll;
+  }
+
+  .RightBar {
+    height: 15vh;
+  }
+  .SecondContainer {
+    flex-direction: column;
+  }
+  .MethodTwo {
+    width: 100%;
+  }
+  .SquadImage {
+    margin: auto;
+    width: 75%;
+  }
+  .TeamImage {
+    width: 40%;
+  }
+}
+
+@media (max-width: 425px) {
+  .Heading {
+    font-size: 1.5rem;
+  }
+  .MethodStep {
+    font-size: 0.6rem;
+    list-style: circle;
+  }
+  .MethodHeading {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .MethodHeading,
+  .MethodStep {
+    text-align: center;
+  }
+  .TeamImage {
+    width: 48%;
+  }
+  .SquadImage {
+    width: 95%;
+  }
+}
