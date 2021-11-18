@@ -70,7 +70,7 @@ const Login = (props: { isAdmin: boolean }) => {
       const data = await response.json();
       console.log(data);
       if (data.success) {
-        ctx.login(data.token, props.isAdmin, data.expiresOn);
+        ctx.login(data.token, props.isAdmin, data.expiresIn);
         if (props.isAdmin) {
           history.replace('/admin');
         } else {

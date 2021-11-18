@@ -10,14 +10,11 @@ export const authContext = createContext<authContextTypes>({
   isAdmin: false,
 });
 
-const calculateRemainingTime: (
-  expiryDate: string | null
-) => number | undefined = (expiryDate: string | null) => {
+const calculateRemainingTime = (expiryDate: string | null) => {
   if (expiryDate) {
     const dateNow = new Date().getTime();
-    const expirationDate = new Date(expiryDate).getTime();
+    const expirationDate = parseInt(expiryDate);
     const remainingTime = expirationDate - dateNow;
-
     return remainingTime;
   }
 };
