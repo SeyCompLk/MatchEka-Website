@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, TouchEventHandler } from 'react';
 import LiveMatchCard from './LiveMatchCard';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
@@ -67,12 +67,44 @@ const props = [
       overs: 3.5,
       wickets: 1,
     },
-    toss: 'SL Choose to bat',
+    toss: 'Australia Choose to bat',
+  },
+  {
+    team1: {
+      name: 'Australia2',
+      flag: 'https://cdn.britannica.com/78/6078-004-77AF7322/Flag-Australia.jpg',
+    },
+    team2: {
+      name: 'India2',
+      flag: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png',
+    },
+    inning: 1,
+    score: 86,
+    wickets: 7,
+    overs: 15,
+    bowls: 3,
+    currStriker: {
+      name: 'Chamika Karunarathne',
+      score: 56,
+      bowls: 25,
+    },
+    nonStriker: {
+      name: 'Dushmantha Chameera',
+      score: 12,
+      bowls: 9,
+    },
+    currBowler: {
+      name: 'Tabraiz Shamsi',
+      overs: 3.5,
+      wickets: 1,
+    },
+    toss: 'India Choose to bat',
   },
 ];
 
 const LiveMatchList: React.FC = () => {
   const [index, setIndex] = useState(0);
+  const [start, setStart] = useState<number>(0);
 
   const increaseIndex = () => {
     if (index === props.length - 1) {
@@ -90,8 +122,31 @@ const LiveMatchList: React.FC = () => {
   };
   const boxRef = useRef(null);
 
+  const touchStartEvent: TouchEventHandler<HTMLDivElement> = (e) => {
+    console.log('Start: ', e);
+    setStart(e.changedTouches[0].clientX);
+  };
+  const touchEndEvent: TouchEventHandler<HTMLDivElement> = (e) => {
+    console.log('End: ', e);
+    const end = e.changedTouches[0].clientX;
+    if (end > start) {
+      decreaseIndex();
+    } else {
+      increaseIndex();
+    }
+  };
+  const touchMoveEvent: TouchEventHandler<HTMLDivElement> = (e) => {
+    console.log('Move: ', e);
+  };
+
   return (
-    <div className={classes.Box} ref={boxRef}>
+    <div
+      className={classes.Box}
+      ref={boxRef}
+      onTouchStart={touchStartEvent}
+      onTouchEnd={touchEndEvent}
+      onTouchMove={touchMoveEvent}
+    >
       <div className={classes.UpperText}>
         <div className={classes.Container1}>
           <div className={classes.Circle}></div>
