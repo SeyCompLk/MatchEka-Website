@@ -81,7 +81,7 @@ const Login = (props: { isAdmin: boolean }) => {
   };
   return (
     <>
-      {!props.isAdmin && <div className={classes.NavCont}>About</div>}
+      <div className={classes.NavCont}>About</div>
       <div className={classes.Container}>
         <div className={classes.BrandBar}>
           <Brand />
