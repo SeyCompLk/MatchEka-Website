@@ -1,0 +1,139 @@
+.Body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  color: #868686;
+}
+
+.LeftBar {
+  width: 70%;
+  height: 85vh;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 22px -5px rgba(0, 0, 0, 0.23);
+}
+
+.RightBar {
+  width: 18%;
+  height: 50vh;
+  background: white;
+  box-shadow: 5px 5px 22px -5px rgba(0, 0, 0, 0.23);
+  border-radius: 10px;
+}
+
+.LeftBar .Methods {
+  margin-top: 10px;
+}
+
+.Heading {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.MethodHeading {
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.MethodStep {
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+
+.ImageContainer,
+.SecondContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+.SecondContainer {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.TeamImage {
+  width: 30%;
+  height: auto;
+  box-shadow: -0px 0px 22px -5px rgba(0, 0, 0, 0.418);
+  border-radius: 10px;
+}
+.SquadImage,
+.MethodTwo {
+  width: 50%;
+  height: auto;
+}
+
+.FirstContainer {
+  margin-bottom: 20px;
+}
+
+.SquadImage {
+  width: 35%;
+}
+
+@media (max-width: 768px) {
+  .Body {
+    flex-direction: column-reverse;
+    height: 85vh;
+    width: 95%;
+    margin: auto;
+    justify-content: space-between;
+  }
+  .LeftBar,
+  .RightBar {
+    width: 100%;
+  }
+
+  .LeftBar {
+    height: 65vh;
+    overflow-y: scroll;
+  }
+
+  .RightBar {
+    height: 15vh;
+  }
+  .SecondContainer {
+    flex-direction: column;
+  }
+  .MethodTwo {
+    width: 100%;
+  }
+  .SquadImage {
+    margin: auto;
+    width: 75%;
+  }
+  .TeamImage {
+    width: 40%;
+  }
+}
+
+@media (max-width: 425px) {
+  .Heading {
+    font-size: 1.5rem;
+  }
+  .MethodStep {
+    font-size: 0.6rem;
+    list-style: circle;
+  }
+  .MethodHeading {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .MethodHeading,
+  .MethodStep {
+    text-align: center;
+  }
+  .TeamImage {
+    width: 48%;
+  }
+  .SquadImage {
+    width: 95%;
+  }
+}
