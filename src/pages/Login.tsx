@@ -59,24 +59,28 @@ const Login = (props: { isAdmin: boolean }) => {
     const url = `${process.env.REACT_APP_API_ENDPOINT}${
       props.isAdmin ? 'admin' : 'user'
     }/login`;
-    const response = await fetch(url, {
-      method: 'POST',
-      body: JSON.stringify(body),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    const data = await response.json();
-    console.log(data);
-    if (data.success) {
-      ctx.login(data.token, props.isAdmin, data.expiresOn);
-      if (props.isAdmin) {
-        history.replace('/admin');
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      const data = await response.json();
+      console.log(data);
+      if (data.success) {
+        ctx.login(data.token, props.isAdmin, data.expiresOn);
+        if (props.isAdmin) {
+          history.replace('/admin');
+        } else {
+          history.replace('/');
+        }
       } else {
-        history.replace('/');
+        setMessage(data.message);
       }
-    } else {
-      setMessage(data.message);
+    } catch (err) {
+      console.log(err);
     }
   };
   return (
