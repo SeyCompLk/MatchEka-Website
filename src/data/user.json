@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "User1",
+    "email": "user1@gmail.com",
+    "contactNo": "012345789",
+    "points": 25
+  },
+  {
+    "id": 2,
+    "name": "User2",
+    "email": "user2@gmail.com",
+    "contactNo": "012345789",
+    "points": 63
+  },
+  {
+    "id": 3,
+    "name": "User3",
+    "email": "user3@gmail.com",
+    "contactNo": "012345789",
+    "points": 96
+  }
+]

@@ -1,0 +1,295 @@
+[
+  {
+    "title": "Sri Lanka Vs India 1st ODI",
+    "predictions": [
+      {
+        "user": 1,
+        "team1": [],
+        "team2": []
+      },
+      {
+        "user": 2,
+        "team1": [],
+        "team2": []
+      },
+      {
+        "user": 3,
+        "team1": [],
+        "team2": []
+      }
+    ],
+    "venue": "RPCS",
+    "date": "2021-12-15T18:45",
+    "teams": {
+      "team1": {
+        "country": "Sri Lanka",
+        "flag": "String",
+        "squad": [
+          {
+            "id": 1,
+            "name": "KJ Perera",
+            "imageUrl": "https://storage.googleapis.com/cricketimages/Players/FD.png",
+            "role": "Batsman",
+            "battingArm": "Left",
+            "bowlingArm": null
+          },
+          {
+            "id": 2,
+            "name": "Pathum Nissanka",
+            "imageUrl": "https://admin.thecricketer.com/weblab/sites/96c8b790-b593-bfda-0ba4-ecd3a9fdefc2/resources/images/site/slsarep30102103.jpg",
+            "role": "Batsman",
+            "battingArm": "Right",
+            "bowlingArm": null
+          },
+          {
+            "id": 3,
+            "name": "Charith Asalanka",
+            "imageUrl": "https://www.espncricinfo.com/db/PICTURES/CMS/326600/326647.10.jpg",
+            "role": "Batting-All rounder",
+            "battingArm": "Left",
+            "bowlingArm": "Right"
+          },
+          {
+            "id": 4,
+            "name": "Avishka Fernando",
+            "imageUrl": "http://www.sundaytimes.lk/190707/uploads/Avishka-Fernando1.jpg",
+            "role": "Batsman",
+            "battingArm": "Right",
+            "bowlingArm": null
+          },
+          {
+            "id": 5,
+            "name": "Bhanuka Rajapaksha",
+            "imageUrl": "https://img1.hscicdn.com/image/upload/f_auto/lsci/db/PICTURES/CMS/295600/295640.3.jpg",
+            "role": "Batsman",
+            "battingArm": "Left",
+            "bowlingArm": null
+          },
+          {
+            "id": 6,
+            "name": "Dasun Shanaka",
+            "imageUrl": "https://img1.hscicdn.com/image/upload/f_auto/lsci/db/PICTURES/CMS/325100/325111.4.jpg",
+            "role": "Batting All rounder",
+            "battingArm": "Right",
+            "bowlingArm": "Right"
+          },
+          {
+            "id": 7,
+            "name": "Wanidu Hasaranga",
+            "imageUrl": "https://cdn.insidesport.co/wp-content/uploads/2021/07/23143534/hasranga.jpg",
+            "role": "Bowling All Rounder",
+            "battingArm": "Right",
+            "bowlingArm": "Right"
+          },
+          {
+            "id": 8,
+            "name": "Chamika Karunarathne",
+            "imageUrl": "https://p.imgci.com/db/PICTURES/CMS/285100/285111.jpg",
+            "role": "Batting All Rounder",
+            "battingArm": "Right",
+            "bowlingArm": "Right"
+          },
+          {
+            "id": 9,
+            "name": "Dushmantha Chameera",
+            "imageUrl": "https://www.espncricinfo.com/db/PICTURES/CMS/326900/326995.jpg",
+            "role": "Bowler",
+            "battingArm": "Right",
+            "bowlingArm": "Right"
+          },
+          {
+            "id": 10,
+            "name": "Lahiru Kumara",
+            "imageUrl": "https://www.onlanka.com/wp-content/uploads/2021/02/lahiru-kumara.jpg",
+            "role": "Bowler",
+            "battingArm": "Right",
+            "bowlingArm": "Right"
+          },
+          {
+            "id": 11,
+            "name": "Maheesh Theekshana",
+            "imageUrl": "https://static.toiimg.com/thumb/msid-86136101,width-1200,height-900,resizemode-4/.jpg",
+            "role": "Bowler",
+            "battingArm": "Right",
+            "bowlingArm": "Right"
+          },
+          {
+            "id": 12,
+            "name": "Dinesh Chandimal",
+            "imageUrl": "https://i.ndtvimg.com/i/2018-03/dinesh-chandimal-sl-t20-afp_806x605_61520776669.jpg",
+            "role": "Batsman",
+            "battingArm": "Right",
+            "bowlingArm": null
+          },
+          {
+            "id": 13,
+            "name": "Kamindu Mendis",
+            "imageUrl": "https://www.espncricinfo.com/db/PICTURES/CMS/281500/281596.jpg",
+            "role": "Batting All Rounder",
+            "battingArm": "Right",
+            "bowlingArm": "Right & Left"
+          },
+          {
+            "id": 14,
+            "name": "Pulina Tharanga",
+            "imageUrl": "https://www.crictracker.com/wp-content/uploads/2021/08/Pulina-Tharanga.jpg",
+            "role": "Bowling All Rounder",
+            "battingArm": "Left",
+            "bowlingArm": "Left"
+          },
+          {
+            "id": 15,
+            "name": "Akila Dananjya",
+            "imageUrl": "https://resources.pulse.icc-cricket.com/ICC/photo/2018/11/11/5a6a239d-457c-4d2d-9923-77f91185b99a/Akila.jpg",
+            "role": "Bowling All Rounder",
+            "battingArm": "Right",
+            "bowlingArm": "Right"
+          }
+        ]
+      },
+      "team2": {
+        "country": "India",
+        "flag": "String",
+        "squad": [
+          {
+            "id": 1,
+            "name": "KL Rahul",
+            "imageUrl": "String",
+            "role": "Batsman",
+            "battingArm": "Right",
+            "bowlingArm": null
+          },
+          {
+            "id": 1,
+            "name": "KL Rahul",
+            "imageUrl": "String",
+            "role": "Batsman",
+            "battingArm": "Right",
+            "bowlingArm": null
+          },
+          {
+            "id": 1,
+            "name": "KL Rahul",
+            "imageUrl": "String",
+            "role": "Batsman",
+            "battingArm": "Right",
+            "bowlingArm": null
+          },
+          {
+            "id": 1,
+            "name": "KL Rahul",
+            "imageUrl": "String",
+            "role": "Batsman",
+            "battingArm": "Right",
+            "bowlingArm": null
+          },
+          {
+            "id": 1,
+            "name": "KL Rahul",
+            "imageUrl": "String",
+            "role": "Batsman",
+            "battingArm": "Right",
+            "bowlingArm": null
+          },
+          {
+            "id": 1,
+            "name": "KL Rahul",
+            "imageUrl": "String",
+            "role": "Batsman",
+            "battingArm": "Right",
+            "bowlingArm": null
+          },
+          {
+            "id": 1,
+            "name": "KL Rahul",
+            "imageUrl": "String",
+            "role": "Batsman",
+            "battingArm": "Right",
+            "bowlingArm": null
+          },
+          {
+            "id": 1,
+            "name": "KL Rahul",
+            "imageUrl": "String",
+            "role": "Batsman",
+            "battingArm": "Right",
+            "bowlingArm": null
+          },
+          {
+            "id": 1,
+            "name": "KL Rahul",
+            "imageUrl": "String",
+            "role": "Batsman",
+            "battingArm": "Right",
+            "bowlingArm": null
+          },
+          {
+            "id": 1,
+            "name": "KL Rahul",
+            "imageUrl": "String",
+            "role": "Batsman",
+            "battingArm": "Right",
+            "bowlingArm": null
+          },
+          {
+            "id": 1,
+            "name": "KL Rahul",
+            "imageUrl": "String",
+            "role": "Batsman",
+            "battingArm": "Right",
+            "bowlingArm": null
+          },
+          {
+            "id": 1,
+            "name": "KL Rahul",
+            "imageUrl": "String",
+            "role": "Batsman",
+            "battingArm": "Right",
+            "bowlingArm": null
+          },
+          {
+            "id": 1,
+            "name": "KL Rahul",
+            "imageUrl": "String",
+            "role": "Batsman",
+            "battingArm": "Right",
+            "bowlingArm": null
+          },
+          {
+            "id": 1,
+            "name": "KL Rahul",
+            "imageUrl": "String",
+            "role": "Batsman",
+            "battingArm": "Right",
+            "bowlingArm": null
+          },
+          {
+            "id": 1,
+            "name": "KL Rahul",
+            "imageUrl": "String",
+            "role": "Batsman",
+            "battingArm": "Right",
+            "bowlingArm": null
+          },
+          {
+            "id": 1,
+            "name": "KL Rahul",
+            "imageUrl": "String",
+            "role": "Batsman",
+            "battingArm": "Right",
+            "bowlingArm": null
+          }
+        ]
+      }
+    },
+    "winPredictions": [
+      {
+        "team": 1,
+        "user": 2
+      }
+    ],
+    "winner": 2,
+    "scoreBoard": 1,
+    "isLive": true
+  }
+]

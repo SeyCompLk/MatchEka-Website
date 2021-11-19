@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2021-11-14",
+    "playerData": [
+      { "user": 2, "score": 33, "userName": "" },
+      { "user": 1, "score": 69 },
+      { "user": 3, "score": 50 }
+    ]
+  },
+  {
+    "date": "2021-11-07",
+    "playerData": [
+      { "user": 3, "score": 64 },
+      { "user": 2, "score": 69 },
+      { "user": 1, "score": 73 }
+    ]
+  },
+  {
+    "date": "2021-11-31",
+    "playerData": [
+      { "user": 2, "score": 89 },
+      { "user": 1, "score": 69 },
+      { "user": 3, "score": 95 }
+    ]
+  }
+]

@@ -1,0 +1,251 @@
+[
+  {
+    "id": 1,
+    "inning": 1,
+    "tossWon": 2,
+    "toss": {
+      "team1": "Bat",
+      "team2": "Bowl"
+    },
+    "teams": {
+      "team1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+      "team2": [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+    },
+    "scores": {
+      "inn1": {
+        "battingTeam": 1,
+        "bowlingTeam": 2,
+        "bat": [
+          {
+            "playerId": 1,
+            "status": "out",
+            "score": 19,
+            "bowlsFaced": 14
+          },
+          {
+            "playerId": 2,
+            "status": "nout",
+            "score": 57,
+            "bowlsFaced": 45
+          },
+          {
+            "playerId": 3,
+            "status": "out",
+            "score": 14,
+            "bowlsFaced": 16
+          },
+          {
+            "playerId": 4,
+            "status": "out",
+            "score": 25,
+            "bowlsFaced": 14
+          },
+          {
+            "playerId": 5,
+            "status": "nout",
+            "score": 32,
+            "bowlsFaced": 35
+          }
+        ],
+        "bowl": [
+          {
+            "playerId": 30,
+            "overs": 3,
+            "wickets": 1,
+            "runs": 21
+          },
+          {
+            "playerId": 29,
+            "overs": 1,
+            "wickets": 2,
+            "runs": 3
+          },
+          {
+            "playerId": 28,
+            "overs": 2,
+            "wickets": 1,
+            "runs": 12
+          }
+        ],
+        "totalScore": 121,
+        "wickets": 3,
+        "overs": 6,
+        "bowls": 5
+      },
+      "inn2": null
+    },
+    "batsman": {
+      "striker": {
+        "playerId": 2,
+        "score": 57,
+        "bowlsFaced": 45
+      },
+      "nonStriker": {
+        "playerId": 5,
+        "score": 32,
+        "bowlsFaced": 35
+      }
+    },
+    "bowler": {
+      "playerId": 28,
+      "overs": 2,
+      "bowls": 5,
+      "wickets": 1,
+      "runs": 12
+    }
+  },
+  {
+    "id": 1,
+    "inning": 2,
+    "tossWon": 1,
+    "toss": {
+      "team1": "Bat",
+      "team2": "Bowl"
+    },
+    "teams": {
+      "team1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+      "team2": [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+    },
+    "scores": {
+      "inn1": {
+        "battingTeam": 1,
+        "bowlingTeam": 2,
+        "bat": [
+          {
+            "playerId": 1,
+            "status": "out",
+            "score": 19,
+            "bowlsFaced": 14
+          },
+          {
+            "playerId": 2,
+            "status": "nout",
+            "score": 57,
+            "bowlsFaced": 45
+          },
+          {
+            "playerId": 3,
+            "status": "out",
+            "score": 14,
+            "bowlsFaced": 16
+          },
+          {
+            "playerId": 4,
+            "status": "out",
+            "score": 25,
+            "bowlsFaced": 14
+          },
+          {
+            "playerId": 5,
+            "status": "nout",
+            "score": 32,
+            "bowlsFaced": 35
+          }
+        ],
+        "bowl": [
+          {
+            "playerId": 30,
+            "overs": 3,
+            "wickets": 1,
+            "runs": 21
+          },
+          {
+            "playerId": 29,
+            "overs": 1,
+            "wickets": 2,
+            "runs": 3
+          },
+          {
+            "playerId": 28,
+            "overs": 2,
+            "wickets": 1,
+            "runs": 12
+          }
+        ],
+        "totalScore": 121,
+        "wickets": 3,
+        "overs": 6,
+        "bowls": 5
+      },
+      "inn2": {
+        "battingTeam": 2,
+        "bowlingTeam": 1,
+        "bat": [
+          {
+            "playerId": 21,
+            "status": "out",
+            "score": 19,
+            "bowlsFaced": 14
+          },
+          {
+            "playerId": 22,
+            "status": "nout",
+            "score": 57,
+            "bowlsFaced": 45
+          },
+          {
+            "playerId": 23,
+            "status": "out",
+            "score": 14,
+            "bowlsFaced": 16
+          },
+          {
+            "playerId": 24,
+            "status": "out",
+            "score": 25,
+            "bowlsFaced": 14
+          },
+          {
+            "playerId": 25,
+            "status": "nout",
+            "score": 32,
+            "bowlsFaced": 35
+          }
+        ],
+        "bowl": [
+          {
+            "playerId": 9,
+            "overs": 3,
+            "wickets": 1,
+            "runs": 21
+          },
+          {
+            "playerId": 5,
+            "overs": 1,
+            "wickets": 2,
+            "runs": 3
+          },
+          {
+            "playerId": 1,
+            "overs": 2,
+            "wickets": 1,
+            "runs": 12
+          }
+        ],
+        "totalScore": 121,
+        "wickets": 3,
+        "overs": 6,
+        "bowls": 5
+      }
+    },
+    "batsman": {
+      "striker": {
+        "playerId": 22,
+        "score": 57,
+        "bowlsFaced": 45
+      },
+      "nonStriker": {
+        "playerId": 25,
+        "score": 32,
+        "bowlsFaced": 35
+      }
+    },
+    "bowler": {
+      "playerId": 9,
+      "overs": 2,
+      "bowls": 5,
+      "wickets": 1,
+      "runs": 12
+    }
+  }
+]
