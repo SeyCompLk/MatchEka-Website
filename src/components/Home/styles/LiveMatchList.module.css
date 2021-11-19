@@ -7,6 +7,12 @@
   padding: 15px;
 }
 
+.Selected {
+  background: greenyellow;
+  border-radius: 5px;
+  padding: 10px;
+}
+
 .UpperText {
   display: flex;
   align-items: center;
@@ -187,6 +193,44 @@
   display: none;
 }
 
+.Notification {
+  font-family: 'Roboto', sans-serif;
+  color: #3f3f3f;
+  background: white;
+  padding: 40px;
+  position: relative;
+  width: max-content;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+.Notification .ButtonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 75%;
+  margin: auto;
+  margin-top: 25px;
+}
+
+.Notification .ButtonContainer button {
+  font-weight: 300;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #3f3f3f;
+  transition: 0.2s all ease;
+}
+
+.Notification .ButtonContainer button:hover {
+  background: #3f3f3f;
+  color: white;
+  border: 1px solid white;
+}
+
 @media (max-width: 1168px) {
   .Box {
     height: auto;
@@ -267,6 +311,19 @@
   }
 }
 
+@media (max-width: 425px) {
+  .Notification {
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 80%;
+    text-align: center;
+  }
+  .Notification .ButtonContainer button {
+    font-size: 0.6rem;
+  }
+}
+
 @media (max-width: 482px) {
   .Card {
     padding: 10px 5px;
@@ -310,6 +367,12 @@
 
   .Card .ButtonContainer .Button {
     font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 325px) {
+  .Notification {
+    width: 95%;
   }
 }
 
