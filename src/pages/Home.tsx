@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import UpcomingMatches from '../components/Home/UpcomingMatchList';
 import AdSlide from '../components/Home/AdSlide';
 import LiveMatchList from '../components/Home/LiveMatchList';
+import Chat from './Chat';
 import classes from '../styles/Home.module.css';
 
 const Home: React.FC = () => {
@@ -76,4 +78,17 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+const HomeRoutes = () => {
+  return (
+    <>
+      <Home />
+      <Switch>
+        <Route path="/chat">
+          <Chat />
+        </Route>
+      </Switch>
+    </>
+  );
+};
+
+export default HomeRoutes;
