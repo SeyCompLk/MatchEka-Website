@@ -157,6 +157,9 @@ const LiveMatchList: React.FC = () => {
   const touchEndEvent: TouchEventHandler<HTMLDivElement> = (e) => {
     console.log('End: ', e);
     const end = e.changedTouches[0].clientX;
+    if (end - start < 10 && end - start > -10) {
+      return;
+    }
     if (end > start) {
       decreaseIndex();
     } else {
