@@ -1,16 +1,17 @@
 import React from 'react';
+import MatchData from '../components/Chat/MatchData';
+import Messages from '../components/Chat/Messages';
+import Overlay from '../components/UI/Overlay';
 // import { useParams } from 'react-router-dom';
 
 const Chat = () => {
   return (
-    <div>
+    <Overlay>
       <div>
-        <form>
-          <input></input>
-          <button type="submit">Submit</button>
-        </form>
+        <MatchData />
+        <Messages />
       </div>
-    </div>
+    </Overlay>
   );
 };
 
