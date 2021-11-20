@@ -5,12 +5,24 @@ import ChatIcon from '@material-ui/icons/Chat';
 import GroupIcon from '@material-ui/icons/Group';
 import classes from './styles/LiveMatchList.module.css';
 
-const LiveMatchCard = (props: MatchOverviewProps) => {
+interface Props extends MatchOverviewProps {
+  updateSelected: (team: number, index: number) => void;
+  teamSelected: number;
+  index: number;
+}
+
+const LiveMatchCard = (props: Props) => {
   return (
     <div className={classes.Card}>
       <div className={classes.TeamRow}>
         <div className={classes.Team1}>
-          <div>
+          <div
+            onClick={() => {
+              props.updateSelected(1, props.index);
+            }}
+            className={`${props.teamSelected === 1 && classes.Selected}`}
+            style={{ cursor: 'pointer' }}
+          >
             <img src={props.team1?.flag} alt={props.team1?.name} />
             <p className={classes.LightText}>{props.team1?.name}</p>
           </div>
@@ -34,7 +46,13 @@ const LiveMatchCard = (props: MatchOverviewProps) => {
               00
             </p>
           </div>
-          <div>
+          <div
+            onClick={() => {
+              props.updateSelected(2, props.index);
+            }}
+            className={`${props.teamSelected === 2 && classes.Selected}`}
+            style={{ cursor: 'pointer' }}
+          >
             <img src={props.team2?.flag} alt={props.team2?.name} />
             <div className={classes.LightText}>{props.team2?.name}</div>
           </div>
