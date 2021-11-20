@@ -1,6 +1,7 @@
 import players from '../player.json';
 import matches from '../match.json';
 import scoreboards from '../scoreboard.json';
+import users from '../user.json';
 
 class Match {
   static getUpcomingMatches = () => {
@@ -51,6 +52,12 @@ class Match {
       .map((match) => {
         return {
           ...match,
+          chat: match.chat?.map((message) => {
+            return {
+              ...message,
+              user: users.find((user) => user.id === message.user),
+            };
+          }),
           scoreBoard: scoreboardWithPlayers.find(
             (scoreboard) => scoreboard.id === match.scoreBoard
           ),
