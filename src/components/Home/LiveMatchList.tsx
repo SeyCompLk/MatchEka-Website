@@ -2,120 +2,38 @@ import React, { useState, useRef, TouchEventHandler } from 'react';
 import LiveMatchCard from './LiveMatchCard';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
-import SLF from '../../assets/images/SL.jpg';
-import SAF from '../../assets/images/SA.jpg';
 import classes from './styles/LiveMatchList.module.css';
 import Overlay from '../UI/Overlay';
+import { LiveMatchListardProps as LiveMatchListProps } from '../../types';
 
-const LiveMatchList: React.FC = () => {
-  const [index, setIndex] = useState(0);
-  const [start, setStart] = useState<number>(0);
-  const [props, setProps] = useState([
-    {
-      team1: {
-        name: 'Sri Lanka',
-        flag: SLF,
-      },
-      team2: {
-        name: 'South Africa',
-        flag: SAF,
-      },
-      inning: 1,
-      score: 86,
-      wickets: 7,
-      overs: 15,
-      bowls: 3,
-      currStriker: {
-        name: 'Chamika Karunarathne',
-        score: 56,
-        bowls: 25,
-      },
-      nonStriker: {
-        name: 'Dushmantha Chameera',
-        score: 12,
-        bowls: 9,
-      },
-      currBowler: {
-        name: 'Tabraiz Shamsi',
-        overs: 3.5,
-        wickets: 1,
-      },
-      toss: 'SL Choose to bat',
-      teamSelected: 0,
-    },
-    {
-      team1: {
-        name: 'Australia',
-        flag: 'https://cdn.britannica.com/78/6078-004-77AF7322/Flag-Australia.jpg',
-      },
-      team2: {
-        name: 'India',
-        flag: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png',
-      },
-      inning: 1,
-      score: 86,
-      wickets: 7,
-      overs: 15,
-      bowls: 3,
-      currStriker: {
-        name: 'Chamika Karunarathne',
-        score: 56,
-        bowls: 25,
-      },
-      nonStriker: {
-        name: 'Dushmantha Chameera',
-        score: 12,
-        bowls: 9,
-      },
-      currBowler: {
-        name: 'Tabraiz Shamsi',
-        overs: 3.5,
-        wickets: 1,
-      },
-      toss: 'Australia Choose to bat',
-      teamSelected: 0,
-    },
-    {
-      team1: {
-        name: 'Australia2',
-        flag: 'https://cdn.britannica.com/78/6078-004-77AF7322/Flag-Australia.jpg',
-      },
-      team2: {
-        name: 'India2',
-        flag: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png',
-      },
-      inning: 1,
-      score: 86,
-      wickets: 7,
-      overs: 15,
-      bowls: 3,
-      currStriker: {
-        name: 'Chamika Karunarathne',
-        score: 56,
-        bowls: 25,
-      },
-      nonStriker: {
-        name: 'Dushmantha Chameera',
-        score: 12,
-        bowls: 9,
-      },
-      currBowler: {
-        name: 'Tabraiz Shamsi',
-        overs: 3.5,
-        wickets: 1,
-      },
-      toss: 'India Choose to bat',
-      teamSelected: 1,
-    },
-  ]);
-
-  const [updatableData, setUpdatableData] = useState<{
+interface Props {
+  matchData: LiveMatchListProps[];
+  updatableData: {
     index: number;
     team: number;
-  } | null>(null);
+  } | null;
+  updateData: () => void;
+  setTeam: (team: number, index: number) => void;
+  setUpdatableData: React.Dispatch<
+    React.SetStateAction<{
+      index: number;
+      team: number;
+    } | null>
+  >;
+}
+
+const LiveMatchList = ({
+  matchData,
+  updatableData,
+  updateData,
+  setUpdatableData,
+  setTeam,
+}: Props) => {
+  const [index, setIndex] = useState(0);
+  const [start, setStart] = useState<number>(0);
 
   const increaseIndex = () => {
-    if (index === props.length - 1) {
+    if (index === matchData.length - 1) {
       setIndex(0);
     } else {
       setIndex(index + 1);
@@ -123,32 +41,12 @@ const LiveMatchList: React.FC = () => {
   };
   const decreaseIndex = () => {
     if (index === 0) {
-      setIndex(props.length - 1);
+      setIndex(matchData.length - 1);
     } else {
       setIndex(index - 1);
     }
   };
   const boxRef = useRef(null);
-
-  const setTeam = (team: number, index: number) => {
-    const temp = { ...props[index!] };
-    if (temp.teamSelected !== 0) {
-      return 0;
-    }
-    setUpdatableData({ index, team });
-  };
-
-  const updateData = () => {
-    const temp = { ...props[updatableData?.index!] };
-    if (temp.teamSelected !== 0) {
-      return 0;
-    }
-    temp.teamSelected = updatableData?.team as number;
-    const allMatches = [...props];
-    allMatches[updatableData?.index!] = temp;
-    setProps(allMatches);
-    setUpdatableData(null);
-  };
 
   const touchStartEvent: TouchEventHandler<HTMLDivElement> = (e) => {
     console.log('Start: ', e);
@@ -172,9 +70,9 @@ const LiveMatchList: React.FC = () => {
 
   const selectedTeam =
     updatableData?.team! === 1
-      ? props[updatableData?.index!].team1.name
+      ? matchData[updatableData?.index!].team1.name
       : updatableData?.team! === 2
-      ? props[updatableData?.index!].team2.name
+      ? matchData[updatableData?.index!].team2.name
       : null;
   return (
     <>
@@ -218,7 +116,7 @@ const LiveMatchList: React.FC = () => {
             <SkipPreviousIcon />
           </span>
           <LiveMatchCard
-            {...props[index]}
+            {...matchData[index]}
             updateSelected={setTeam}
             index={index}
           />

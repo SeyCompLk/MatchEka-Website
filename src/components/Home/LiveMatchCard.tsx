@@ -1,17 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MatchOverviewProps } from '../../types';
+import { LiveMatchCardProps } from '../../types';
 import ChatIcon from '@material-ui/icons/Chat';
 import GroupIcon from '@material-ui/icons/Group';
 import classes from './styles/LiveMatchList.module.css';
 
-interface Props extends MatchOverviewProps {
-  updateSelected: (team: number, index: number) => void;
-  teamSelected: number;
-  index: number;
-}
-
-const LiveMatchCard = (props: Props) => {
+const LiveMatchCard = (props: LiveMatchCardProps) => {
   return (
     <div className={classes.Card}>
       <div className={classes.TeamRow}>
@@ -19,6 +13,7 @@ const LiveMatchCard = (props: Props) => {
           <div
             onClick={() => {
               props.updateSelected(1, props.index);
+              console.log('Clicked');
             }}
             className={`${props.teamSelected === 1 && classes.Selected}`}
             style={{ cursor: 'pointer' }}
@@ -26,25 +21,39 @@ const LiveMatchCard = (props: Props) => {
             <img src={props.team1?.flag} alt={props.team1?.name} />
             <p className={classes.LightText}>{props.team1?.name}</p>
           </div>
-          <div>
-            <p>{`${props.score}/${props.wickets}`}</p>
-            <p className={classes.LightText}>
-              {`(${props.overs}.${props.bowls})`}
-            </p>
-          </div>
+          {props.inningData[1].score ? (
+            <div>
+              <p>{`${props.inningData[1].score}/${props.inningData[1].wickets}`}</p>
+              <p className={classes.LightText}>
+                {`(${props.inningData[1].overs}.${props.inningData[1].bowls})`}
+              </p>
+            </div>
+          ) : (
+            <p>Yet to bat</p>
+          )}
         </div>
         <div className={classes.RunRate}>
           <p>{props.toss}</p>
           <p className={classes.LightText}>
-            CRR {`${Math.round(props.score! / props.overs!)}`}
+            CRR{' '}
+            {`${Math.round(
+              props.inningData[props.inning].score! /
+                props.inningData[props.inning].overs!
+            )}`}
           </p>
         </div>
         <div className={classes.Team2}>
           <div>
-            <p>Yet to bat</p>
-            <p style={{ opacity: 0 }} className={classes.LightText}>
-              00
-            </p>
+            {props.inningData[2].score ? (
+              <div>
+                <p>{`${props.inningData[2].score}/${props.inningData[2].score}`}</p>
+                <p className={classes.LightText}>
+                  {`(${props.inningData[2].overs}.${props.inningData[2].bowls})`}
+                </p>
+              </div>
+            ) : (
+              <p>Yet to bat</p>
+            )}
           </div>
           <div
             onClick={() => {
