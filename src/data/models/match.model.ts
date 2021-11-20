@@ -12,10 +12,10 @@ const getTossDetails = (
   }
 ) => {
   if (tossWon === 1) {
-    return `${teams.team1} Won the toss and choose to ${toss.team1} first`;
+    return `${teams.team1} choose to ${toss.team1}`;
   }
 
-  return `${teams.team2} Won the toss and choose to ${toss.team2} first`;
+  return `${teams.team2} choose to ${toss.team2}`;
 };
 
 class Match {
