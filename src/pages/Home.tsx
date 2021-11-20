@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import Matches from '../data/models/match.model';
 import UpcomingMatches from '../components/Home/UpcomingMatchList';
 import AdSlide from '../components/Home/AdSlide';
 import LiveMatchList from '../components/Home/LiveMatchList';
@@ -7,24 +8,24 @@ import Chat from './Chat';
 import classes from '../styles/Home.module.css';
 
 const Home: React.FC = () => {
-  const [matches, setMatches] = useState([]);
-  const upcomingMatches = matches.filter((match: any) => !match.isLive);
+  const [liveMatches, setLiveMatches] = useState<any>([]);
+  const [upcomingMatches, setUpcomingMatches] = useState<any>([]);
 
-  const fetchData = async () => {
-    const url = `${process.env.REACT_APP_API_ENDPOINT}/user/matches`;
-    const response = await fetch(url);
-    const data = await response.json();
-    setMatches(data);
-  };
+  const fetchData = useCallback(() => {
+    setLiveMatches(Matches.getPlayingmatches());
+    setUpcomingMatches(Matches.getUpcomingMatches());
+  }, []);
   const [isLive, setIsLive] = useState<boolean>(true);
-  console.log(upcomingMatches);
   useEffect(() => {
     try {
       fetchData();
     } catch (err) {
       console.log(err);
     }
-  }, []);
+  }, [fetchData]);
+
+  console.log(liveMatches);
+  console.log(upcomingMatches);
   return (
     <div className={classes.Container}>
       {!isLive && (
