@@ -3,6 +3,21 @@ import matches from '../match.json';
 import scoreboards from '../scoreboard.json';
 import users from '../user.json';
 
+const getTossDetails = (
+  tossWon: number,
+  toss: { team1: string; team2: string },
+  teams: {
+    team1: string;
+    team2: string;
+  }
+) => {
+  if (tossWon === 1) {
+    return `${teams.team1} Won the toss and choose to ${toss.team1} first`;
+  }
+
+  return `${teams.team2} Won the toss and choose to ${toss.team2} first`;
+};
+
 class Match {
   static getUpcomingMatches = () => {
     const upcomingMatches = matches.filter((match) => !match.isLive);
@@ -64,7 +79,19 @@ class Match {
         };
       });
 
-    return withScoreBoards;
+    return withScoreBoards.map((matchData) => {
+      return {
+        ...matchData,
+        toss: getTossDetails(
+          matchData.scoreBoard?.tossWon!,
+          matchData.scoreBoard?.toss!,
+          {
+            team1: matchData.teams.team1.country,
+            team2: matchData.teams.team2.country,
+          }
+        ),
+      };
+    });
   };
 }
 
