@@ -118,6 +118,59 @@ export interface MatchOverviewProps {
   toss: string;
 }
 
+export interface LiveMatchCardProps extends LiveMatchListardProps {
+  updateSelected: (team: number, index: number) => void;
+  teamSelected: number;
+  index: number;
+}
+
+export interface LiveMatchListardProps {
+  team1: {
+    name: string;
+    flag: string;
+  };
+  team2: {
+    name: string;
+    flag: string;
+  };
+  inning: 1 | 2;
+  inningData: {
+    1: {
+      score: number | undefined;
+      wickets: number | undefined;
+      overs: number | undefined;
+      bowls: number | undefined;
+    };
+    2: {
+      score: number | undefined;
+      wickets: number | undefined;
+      overs: number | undefined;
+      bowls: number | undefined;
+    };
+  };
+  currStriker: {
+    name: string;
+    score: number;
+    bowls: number;
+  };
+  nonStriker: {
+    name: string;
+    score: number;
+    bowls: number;
+  };
+  currBowler: {
+    name: string;
+    overs: number;
+    wickets: number;
+  };
+  toss: string;
+  teamSelected: number;
+}
+
+// export interface LiveMatchListHome extends LiveMatchListardProps {
+//   ;
+// }
+
 interface Player {
   _id: string;
   name: string;

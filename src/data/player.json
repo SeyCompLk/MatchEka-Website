@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "name": "KJ Perera",
+    "image": "",
+    "role": "Batsman",
+    "battingHand": "left",
+    "bowlingHand": null
+  },
+  {
+    "id": 2,
+    "name": "Pathum Nissanka",
+    "image": "",
+    "role": "Batsman",
+    "battingHand": "right",
+    "bowlingHand": null
+  },
+  {
+    "id": 3,
+    "name": "Charith Asalanka",
+    "image": "",
+    "role": "Batting All Rounder",
+    "battingHand": "left",
+    "bowlingHand": "right"
+  },
+  {
+    "id": 4,
+    "name": "Avishka Fernando",
+    "image": "",
+    "role": "Batsman",
+    "battingHand": "right",
+    "bowlingHand": null
+  },
+  {
+    "id": 5,
+    "name": "Banuka Rajapaksha",
+    "image": "",
+    "role": "Batsman",
+    "battingHand": "left",
+    "bowlingHand": null
+  },
+  {
+    "id": 6,
+    "name": "Dasun Shanaka",
+    "image": "",
+    "role": "Batting All Rounder",
+    "battingHand": "right",
+    "bowlingHand": "right"
+  },
+  {
+    "id": 7,
+    "name": "Chamika Karunarathne",
+    "image": "",
+    "role": "Batting All Rounder",
+    "battingHand": "right",
+    "bowlingHand": "right"
+  },
+  {
+    "id": 8,
+    "name": "Wanindu Hasaranga",
+    "image": "",
+    "role": "Bowling All Rounder",
+    "battingHand": "right",
+    "bowlingHand": "right"
+  },
+  {
+    "id": 9,
+    "name": "Dushmantha Chameera",
+    "image": "",
+    "role": "Bowler",
+    "battingHand": "right",
+    "bowlingHand": "right"
+  },
+  {
+    "id": 10,
+    "name": "Maheesh Theekshana",
+    "image": "",
+    "role": "Bowler",
+    "battingHand": "right",
+    "bowlingHand": "right"
+  },
+  {
+    "id": 11,
+    "name": "Lahiru Kumara",
+    "image": "",
+    "role": "Bowler",
+    "battingHand": "right",
+    "bowlingHand": "right"
+  },
+  {
+    "id": 12,
+    "name": "Dinesh Chandimal",
+    "image": "",
+    "role": "Batsman",
+    "battingHand": "right",
+    "bowlingHand": null
+  },
+  {
+    "id": 13,
+    "name": "Pulina Tharanga",
+    "image": "",
+    "role": "Bowling All Rounder",
+    "battingHand": "left",
+    "bowlingHand": "left"
+  },
+  {
+    "id": 14,
+    "name": "Akila Dananjaya",
+    "image": "",
+    "role": "Bowling All Rounder",
+    "battingHand": "right",
+    "bowlingHand": "right"
+  },
+  {
+    "id": 15,
+    "name": "Binura Fernando",
+    "image": "",
+    "role": "Bowler",
+    "battingHand": "left",
+    "bowlingHand": "left"
+  },
+  {
+    "id": 16,
+    "name": "KL Rahul",
+    "image": "",
+    "role": "Batsman",
+    "battingHand": "right",
+    "bowlingHand": null
+  },
+  {
+    "id": 17,
+    "name": "Rohith Sharma",
+    "image": "",
+    "role": "Batsman",
+    "battingHand": "right",
+    "bowlingHand": null
+  },
+  {
+    "id": 18,
+    "name": "Virat Kohli",
+    "image": "",
+    "role": "Batsman",
+    "battingHand": "left",
+    "bowlingHand": "right"
+  },
+  {
+    "id": 19,
+    "name": "Suryakumar Yadav",
+    "image": "",
+    "role": "Batsman",
+    "battingHand": "left",
+    "bowlingHand": null
+  },
+  {
+    "id": 20,
+    "name": "Ishan Kishan",
+    "image": "",
+    "role": "Batsman",
+    "battingHand": "left",
+    "bowlingHand": null
+  },
+  {
+    "id": 21,
+    "name": "Ravindra Jadeja",
+    "image": "",
+    "role": "Batting All Rounder",
+    "battingHand": "left",
+    "bowlingHand": "right"
+  },
+  {
+    "id": 22,
+    "name": "Hardi Pandya",
+    "image": "",
+    "role": "Batting All Rounder",
+    "battingHand": "right",
+    "bowlingHand": "right"
+  },
+  {
+    "id": 23,
+    "name": "Ravichandran Ashwin",
+    "image": "",
+    "role": "Bowler",
+    "battingHand": "right",
+    "bowlingHand": "right"
+  },
+  {
+    "id": 24,
+    "name": "Mohamed Shami",
+    "image": "",
+    "role": "Bowler",
+    "battingHand": "left",
+    "bowlingHand": "left"
+  },
+  {
+    "id": 25,
+    "name": "Jasprit Bumrah",
+    "image": "",
+    "role": "Bowler",
+    "battingHand": "right",
+    "bowlingHand": "right"
+  },
+  {
+    "id": 26,
+    "name": "Mohamed Siraj",
+    "image": "",
+    "role": "Bowler",
+    "battingHand": "right",
+    "bowlingHand": "right"
+  },
+  {
+    "id": 27,
+    "name": "Rishabh Pant",
+    "image": "",
+    "role": "Batsman",
+    "battingHand": "right",
+    "bowlingHand": null
+  },
+  {
+    "id": 28,
+    "name": "Varun Chakravarthy",
+    "image": "",
+    "role": "Bowler",
+    "battingHand": "right",
+    "bowlingHand": "right"
+  },
+  {
+    "id": 29,
+    "name": "Navdeep Saini",
+    "image": "",
+    "role": "Bowler",
+    "battingHand": "right",
+    "bowlingHand": "right"
+  },
+  {
+    "id": 30,
+    "name": "Venkatesh Iyer",
+    "image": "",
+    "role": "Batting All Rounder",
+    "battingHand": "right",
+    "bowlingHand": "right"
+  }
+]
