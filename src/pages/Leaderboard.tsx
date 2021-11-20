@@ -63,7 +63,7 @@ const Leaderboard = () => {
             </div>
           </div>
           <div className="row-start-2 row-span-5 h-full w-full p-4 px-6">
-            <div className="h-full w-full flex justify-center items-center">
+            <div className="h-5/6 w-full flex justify-center items-center">
               <div className="h-full w-full grid grid-rows-1 min-h-screen">
                 <div className="h-full w-full flex items-center justify-around min-h-screen">
                   <div className="flex justify-center items-center m-4 relative h-full w-full">
@@ -84,7 +84,7 @@ const Leaderboard = () => {
                                 </div>
                               </div>
                             </div>
-                            <div className="block w-full overflow-y-scroll px-6 h-4/6 mt-5 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white">
+                            <div className="block w-full overflow-y-scroll px-6 h-5/6 mt-5 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white">
                               {competitors.map((competitor) => {
                                 return (
                                   <LeaderboardUser
@@ -107,7 +107,7 @@ const Leaderboard = () => {
                           <div className="row-start-1 row-span-2 flex justify-center items-center text-white font-bold text-xl">
                             PREVIOUS WEEK WINNERS
                           </div>
-                          <div className="row-start-3 row-span-4 -top-5">
+                          <div className="row-start-3 row-span-4 -top-5 flex justify-center items-start h-full w-full">
                             <div className="relative block w-full h-full">
                               <div className="w-full p-2">
                                 <div className="inline-flex justify-between items-center w-full h-full rounded-2xl bg-white px-7 py-2">
@@ -119,7 +119,7 @@ const Leaderboard = () => {
                                   </div>
                                 </div>
                               </div>
-                              <div className="block w-full overflow-y-scroll px-6 h-full scrollbar-none mt-5">
+                              <div className="block w-full z-0 overflow-y-scroll px-6 h-4/6 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white mt-5">
                                 {prevWinners.map((winner) => {
                                   return (
                                     <div className="mx-0">
@@ -158,7 +158,15 @@ const Leaderboard = () => {
 
       {/* MOBILE VIEW */}
 
-      <div className="flex lg:hidden">Leaderboard - Mobile</div>
+      <div className="flex lg:hidden">
+        <div className="grid grid-rows-6 w-full h-full">
+            <div className="row-start-1 w-full h-full p-2 px-3">
+              <div className="h-full w-full my-6 rounded-lg shadow-lg bg-white flex justify-center items-center text-3xl font-bold">
+                LEADERBOARDS
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
   );
 };
