@@ -1,0 +1,67 @@
+.ChatBox {
+  width: 80%;
+  height: 70vh;
+  background-color: white;
+  border-radius: 10px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 15px 10px;
+}
+
+.ChatBox > div {
+  height: 57vh;
+  overflow-y: scroll;
+  width: 96%;
+  margin: auto;
+}
+
+.ChatBox form {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  position: static;
+  z-index: 10000;
+}
+
+.ChatBox input {
+  width: 75%;
+  background-color: silver;
+  outline: none;
+  padding: 15px;
+}
+
+.ChatBox button {
+  width: 20%;
+  background-color: gold;
+  padding: 15px;
+}
+
+.ChatBox > div::-webkit-scrollbar {
+  width: 10px;
+  height: 30px;
+}
+.ChatBox > div::-webkit-scrollbar-track {
+  display: none;
+}
+
+.ChatBox > div::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.363);
+  transition: 1s all ease;
+  border-radius: 30px;
+}
+
+.ChatBox > div::-webkit-scrollbar-thumb:hover {
+  background: rgb(141, 141, 141);
+}
+
+.MatchBox {
+  height: 25vh;
+  width: 80%;
+  margin: auto;
+  background-color: white;
+  border-radius: 10px;
+}
