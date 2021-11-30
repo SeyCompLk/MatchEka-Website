@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Matches from '../data/models/match.model';
 import UpcomingMatches from '../components/Home/UpcomingMatchList';
 import AdSlide from '../components/Home/AdSlide';
@@ -185,14 +185,13 @@ const Home: React.FC = () => {
 };
 
 const HomeRoutes = () => {
+  const { search } = useLocation();
+  const query = new URLSearchParams(search);
+  const tab = query.get('tab');
   return (
     <>
       <Home />
-      <Switch>
-        <Route path="/chat">
-          <Chat />
-        </Route>
-      </Switch>
+      {tab === 'chat' && <Chat />}
     </>
   );
 };
