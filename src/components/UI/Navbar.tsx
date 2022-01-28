@@ -53,34 +53,34 @@ const NavBar = ({ imgSrc, children }: Props) => {
               </NavLink>
             )}
             <li>
-              <NavLink to="/rewards" activeClassName={classes.Active}>
+              <NavLink to="/rewards" className={(navData) => navData.isActive ? classes.Active : "" }>
                 Rewards
               </NavLink>
             </li>
             <li>
-              <NavLink to="/leaderboard" activeClassName={classes.Active}>
+              <NavLink to="/leaderboard" className={(navData) => navData.isActive ? classes.Active : "" }>
                 Leaderboard
               </NavLink>
             </li>
             <li>
-              <NavLink to="/pastMatches" activeClassName={classes.Active}>
+              <NavLink to="/pastMatches" className={(navData) => navData.isActive ? classes.Active : "" }>
                 Past Matches
               </NavLink>
             </li>
             <li>
-              <NavLink to="/about" activeClassName={classes.Active}>
+              <NavLink to="/about" className={(navData) => navData.isActive ? classes.Active : "" }>
                 About
               </NavLink>
             </li>
             {ctx.token ? (
               <li>
-                <NavLink to="/profile" activeClassName={classes.Active}>
+                <NavLink to="/profile" className={(navData) => navData.isActive ? classes.Active : "" }>
                   Profile
                 </NavLink>
               </li>
             ) : (
               <li>
-                <NavLink to="/login" activeClassName={classes.Active}>
+              <NavLink to="/login" className={(navData) => navData.isActive ? classes.Active : "" }>
                   Profile
                 </NavLink>
               </li>

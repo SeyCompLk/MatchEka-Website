@@ -11,65 +11,75 @@ import AdminLayout from './components/UI/AdminLayout';
 import AdminHome from './pages/Admin/Home';
 import AdminSingleMatch from './pages/Admin/SingleMatch';
 import { authContext } from './context/authContext';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 
 function App() {
   const ctx = useContext(authContext);
   console.log(ctx.token);
   return (
-    <Switch>
-      <Route path="/" exact>
-        <NavBar imgSrc={PRImg}>
-          <Home />
-        </NavBar>
-      </Route>
-      <Route path="/leaderboard">
-        <NavBar imgSrc={PRImg}>
-          <Leaderboard />
-        </NavBar>
-      </Route>
-      <Route path="/chat/:matchId">
-        <NavBar imgSrc={PRImg}>
-          <Chat />
-        </NavBar>
-      </Route>
-      <Route path="/rewards">
-        <NavBar imgSrc={PRImg}>
-          <Rewards />
-        </NavBar>
-      </Route>
-      <Route path="/user/login">
-        <UserLogin isAdmin={false} />
-      </Route>
-      <Route path="/user/register">
-        <UserRegister isAdmin={false} />
-      </Route>
-      <Route path="/admin" exact>
-        {ctx.token ? (
-          <AdminLayout>
-            <AdminHome />
-          </AdminLayout>
-        ) : (
-          <Redirect to="/admin/login" />
-        )}
-      </Route>
-      <Route path="/admin/login">
-        <UserLogin isAdmin={true} />
-      </Route>
-      <Route path="/admin/register">
-        <UserRegister isAdmin={true} />
-      </Route>
-      <Route path="/admin/matches/:matchId" exact>
-        {ctx.token ? (
-          <AdminLayout>
-            <AdminSingleMatch />
-          </AdminLayout>
-        ) : (
-          <Redirect to="/admin/login" />
-        )}
-      </Route>
-    </Switch>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <NavBar imgSrc={PRImg}>
+            <Home />
+          </NavBar>
+        }
+      />
+      <Route
+        path="/leaderboard"
+        element={
+          <NavBar imgSrc={PRImg}>
+            <Leaderboard />
+          </NavBar>
+        }
+      />
+      <Route
+        path="/chat/:matchId"
+        element={
+          <NavBar imgSrc={PRImg}>
+            <Chat />
+          </NavBar>
+        }
+      />
+      <Route
+        path="/rewards"
+        element={
+          <NavBar imgSrc={PRImg}>
+            <Rewards />
+          </NavBar>
+        }
+      />
+      <Route path="/user/login" element={<UserLogin isAdmin={false} />} />
+      <Route path="/user/register" element={<UserRegister isAdmin={false} />} />
+      <Route
+        path="/admin"
+        element={
+          ctx.token ? (
+            <AdminLayout>
+              <AdminHome />
+            </AdminLayout>
+          ) : (
+            <Route path="*" element={<Navigate to="/user/login" />} />
+          )
+        }
+      ></Route>
+      <Route path="/admin/login" element={<UserLogin isAdmin={true} />} />
+      <Route path="/admin/register" element={<UserRegister isAdmin={true} />} />
+      <Route
+        path="/admin/matches/:matchId"
+        element={
+          ctx.token ? (
+            <AdminLayout>
+              <AdminSingleMatch />
+            </AdminLayout>
+          ) : (
+            <Route path="*" element={<Navigate to="/admin/login" />} />
+          )
+        }
+      />
+    </Routes>
   );
 }
 

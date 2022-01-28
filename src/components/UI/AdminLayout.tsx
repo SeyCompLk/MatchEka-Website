@@ -17,13 +17,23 @@ const AdminLayout = (props: { children: ReactElement | ReactElement[] }) => {
         <nav className={classes.Nav}>
           <ul>
             <li>
-              <NavLink to="/admin/" activeClassName={classes.Active}>
+              <NavLink
+                to="/admin/"
+                className={(navData) =>
+                  navData.isActive ? classes.Active : ''
+                }
+              >
                 Home
               </NavLink>
             </li>
             <li>
               {ctx.isAdmin && ctx.token && (
-                <NavLink to="/admin/new-match" activeClassName={classes.Active}>
+                <NavLink
+                  to="/admin/new-match"
+                  className={(navData) =>
+                    navData.isActive ? classes.Active : ''
+                  }
+                >
                   New match
                 </NavLink>
               )}

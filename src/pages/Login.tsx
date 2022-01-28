@@ -6,7 +6,7 @@ import Button from '../components/UI/Button';
 import classes from '../styles/Login.module.css';
 import { InputProps } from '../types';
 import { authContext } from '../context/authContext';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = (props: { isAdmin: boolean }) => {
   const emailValidator = useInput(
@@ -42,7 +42,7 @@ const Login = (props: { isAdmin: boolean }) => {
   };
 
   const ctx = useContext(authContext);
-  const history = useHistory();
+  const history = useNavigate();
 
   const submitFormHandler: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
@@ -72,9 +72,9 @@ const Login = (props: { isAdmin: boolean }) => {
       if (data.success) {
         ctx.login(data.token, props.isAdmin, data.expiresIn);
         if (props.isAdmin) {
-          history.replace('/admin');
+          history('/admin');
         } else {
-          history.replace('/');
+          history('/');
         }
       } else {
         setMessage(data.message);
