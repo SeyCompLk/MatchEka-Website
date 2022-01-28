@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Matches from '../data/models/match.model';
 import UpcomingMatches from '../components/Home/UpcomingMatchList';
 import AdSlide from '../components/Home/AdSlide';
@@ -188,11 +188,9 @@ const HomeRoutes = () => {
   return (
     <>
       <Home />
-      <Switch>
-        <Route path="/chat">
-          <Chat />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/chat" element={<Chat />} />
+      </Routes>
     </>
   );
 };
