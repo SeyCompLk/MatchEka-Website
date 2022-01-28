@@ -4,8 +4,12 @@ import Overview from '../../components/Admin/Overview';
 import { authContext } from '../../context/authContext';
 import { MatchOverviewProps, ScoreBoardResponse } from '../../types';
 
+interface Props {
+  matchId: string;
+}
+
 const SingleMatch = () => {
-  const { matchId }: { matchId: string } = useParams();
+  const { matchId } = useParams();
 
   //score
   const [fullData, setFullData] = useState<ScoreBoardResponse>();
